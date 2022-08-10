@@ -1,0 +1,32 @@
+.dropdown {
+    position: relative;
+    top: 200px;
+    width: 150px;
+    background-color: var(--bg);
+    border: var(--border);
+    border-radius: var(--border-radius);
+    padding: 1rem;
+    box-shadow:  5px 10px 8px 1px #888888 ;
+    overflow: hidden;
+    .menu {
+        width: 100%;
+        button {
+            height: 50px;
+            display: flex;
+            align-items: center;
+            border: none;
+            background: transparent;
+            font-size: 0.85rem;
+            color: var(--text-color);
+            font-weight: 500;
+            padding: 0 0.2rem;
+            opacity: 0.6;
+        
+            &:hover,
+            &.is-active {
+              opacity: 1;
+            }
+        }
+    }
+    
+}
