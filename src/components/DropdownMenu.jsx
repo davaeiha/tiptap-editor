@@ -47,6 +47,12 @@ const DropdownMenu = ({editor}) => {
                 >
                     H3
                 </button>
+                <button
+                    onClick={() => editor.commands.insertContent("<div data-type='draggable-item'><p></p></div>")}
+                    // className={editor.isActive('heading', { level: 3 }) ? 'is-active' : ' '}
+                >
+                    card
+                </button>
            </div>
         </div>
     );
