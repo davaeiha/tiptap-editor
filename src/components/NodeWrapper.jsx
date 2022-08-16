@@ -1,8 +1,12 @@
 /* eslint-disable import/no-anonymous-default-export */
 import { NodeViewContent, NodeViewWrapper } from '@tiptap/react';
-import React from 'react';
+import React,{useRef} from 'react';
+import DropdownMenu from './DropdownMenu';
 
-export default () => {
+export default (props) => {
+
+  const contentRef = useRef(null);
+
   return (
     <NodeViewWrapper className="draggable-item">
       <div
@@ -11,11 +15,9 @@ export default () => {
         draggable="true"
         data-drag-handle
       />
-      <NodeViewContent className="content" />
-      <div
-        className='dropdown-menu'
-        contentEditable="false"
-      />
+      <NodeViewContent className="content" ref={contentRef}/>
+
+      <DropdownMenu contentRef={contentRef}/>
     </NodeViewWrapper>
   )
 }

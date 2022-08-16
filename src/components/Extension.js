@@ -10,11 +10,15 @@ export default Node.create({
   content: "(paragraph|heading|list?)+",
 
   draggable: true,
+   
 
   parseHTML() {
     return [
       {
         tag: 'div[data-type="draggable-item"]',
+      },
+      {
+        tag: "draggableItem",
       },
     ];
   },

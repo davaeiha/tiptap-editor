@@ -1486,6 +1486,11 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
+"@juggle/resize-observer@^3.3.0":
+  version "3.3.1"
+  resolved "https://registry.yarnpkg.com/@juggle/resize-observer/-/resize-observer-3.3.1.tgz#b50a781709c81e10701004214340f25475a171a0"
+  integrity sha512-zMM9Ds+SawiUkakS7y94Ymqx+S0ORzpG3frZirN3l+UlXUmSUR7hF4wxCVqW+ei94JzV5kt0uXBcoOEAuiydrw==
+
 "@leichtgewicht/ip-codec@^2.0.1":
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/@leichtgewicht/ip-codec/-/ip-codec-2.0.4.tgz#b2ac626d6cb9c8718ab459166d4bb405b8ffa78b"
@@ -1531,6 +1536,193 @@
   version "2.11.6"
   resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.11.6.tgz#cee20bd55e68a1720bdab363ecf0c821ded4cd45"
   integrity sha512-50/17A98tWUfQ176raKiOGXuYpLyyVMkxxG6oylzL3BPOlA6ADGdK7EYunSa4I064xerltq9TGXs8HmOk5E+vw==
+
+"@react-md/app-bar@^5.1.3":
+  version "5.1.3"
+  resolved "https://registry.yarnpkg.com/@react-md/app-bar/-/app-bar-5.1.3.tgz#240eb0e138b7fd7e19be4ba6b30c0403db1543bc"
+  integrity sha512-j1De/pkjYB/BwVabGSikudRehjau8au+i6CT94lAZfw5qGQlvI0RzBi6IJIjPysIdaSHMh0IMDyxBT+rfpcsxg==
+  dependencies:
+    "@react-md/button" "^5.1.3"
+    "@react-md/elevation" "^5.1.3"
+    "@react-md/icon" "^5.1.3"
+    "@react-md/theme" "^5.1.3"
+    "@react-md/typography" "^5.1.3"
+    "@react-md/utils" "^5.1.3"
+    classnames "^2.3.1"
+
+"@react-md/avatar@^5.1.3":
+  version "5.1.3"
+  resolved "https://registry.yarnpkg.com/@react-md/avatar/-/avatar-5.1.3.tgz#7b097d18b1f2173ef9d632ad861dd0473c41bbd9"
+  integrity sha512-ElIZaUXHKs7Bu9Ezu5AWGcUJeDGqpP8iPFFzjLA2mmeWxGfySSDU/S1OvePDZcVqcb2Mfm+NKgxOPG+KEBW8tQ==
+  dependencies:
+    "@react-md/icon" "^5.1.3"
+    "@react-md/theme" "^5.1.3"
+    "@react-md/utils" "^5.1.3"
+    classnames "^2.3.1"
+
+"@react-md/button@^5.1.3":
+  version "5.1.3"
+  resolved "https://registry.yarnpkg.com/@react-md/button/-/button-5.1.3.tgz#c420496890c657bda155303f26aa5469897ab29d"
+  integrity sha512-aB5I0BGeN/2JwgCgV5M06wI/fmQZCZ78TnNZdQKw98tndUw99jHaOAHTqLD/K4m6vV5Tg38mTCASXyGDwGO6Zw==
+  dependencies:
+    "@react-md/elevation" "^5.1.3"
+    "@react-md/icon" "^5.1.3"
+    "@react-md/states" "^5.1.3"
+    "@react-md/theme" "^5.1.3"
+    "@react-md/transition" "^5.1.3"
+    "@react-md/typography" "^5.1.3"
+    "@react-md/utils" "^5.1.3"
+    classnames "^2.3.1"
+
+"@react-md/dialog@^5.1.3":
+  version "5.1.3"
+  resolved "https://registry.yarnpkg.com/@react-md/dialog/-/dialog-5.1.3.tgz#6518a2668c83a6bf76e4ca7f943a01278c891c93"
+  integrity sha512-P+mQdimCCKpmKmEqEN/0ChhQxHe+fg3gw0hPgSrf5jI6MiXaCQftArK7L7/lo3wDpo86x1EHwQBT+bXDE5/D9Q==
+  dependencies:
+    "@react-md/app-bar" "^5.1.3"
+    "@react-md/elevation" "^5.1.3"
+    "@react-md/overlay" "^5.1.3"
+    "@react-md/portal" "^5.1.0"
+    "@react-md/theme" "^5.1.3"
+    "@react-md/transition" "^5.1.3"
+    "@react-md/typography" "^5.1.3"
+    "@react-md/utils" "^5.1.3"
+    classnames "^2.3.1"
+
+"@react-md/divider@^5.1.3":
+  version "5.1.3"
+  resolved "https://registry.yarnpkg.com/@react-md/divider/-/divider-5.1.3.tgz#984f0d3fe11306482b5cafc5a66348116477ceee"
+  integrity sha512-hhyR8UmX42ofcXGdv3B24Qp0bc01BEqXsGWOqxKJVwXThT6ehY9hM2KkUHCrW2+Kf8Hc6lSdpb0KsShO+OkcfQ==
+  dependencies:
+    "@react-md/theme" "^5.1.3"
+    "@react-md/utils" "^5.1.3"
+    classnames "^2.3.1"
+
+"@react-md/elevation@^5.1.3":
+  version "5.1.3"
+  resolved "https://registry.yarnpkg.com/@react-md/elevation/-/elevation-5.1.3.tgz#2459c81157b5439fb2f581bd6af06910689b12cc"
+  integrity sha512-spArkcqASlReByg5F+Tp+e74ek9Vi1n6nU4TOr5U42sytVwncilEUchxl6zFcwg3MDwMjfk40AVPuwkJRlDoZg==
+  dependencies:
+    "@react-md/theme" "^5.1.3"
+    "@react-md/transition" "^5.1.3"
+    "@react-md/utils" "^5.1.3"
+
+"@react-md/icon@^5.1.3":
+  version "5.1.3"
+  resolved "https://registry.yarnpkg.com/@react-md/icon/-/icon-5.1.3.tgz#bc52f111f9c34af41646c9a506ef16e4d8d989e6"
+  integrity sha512-GCgNmj3bqKhG4FuEud83ffBbtyytLlFNQ2nRPWdzqzi5C3UzEn1p6tn5AwUQTqP6Anf51d6qPXl49+lEk8bkrA==
+  dependencies:
+    "@react-md/theme" "^5.1.3"
+    "@react-md/typography" "^5.1.3"
+    "@react-md/utils" "^5.1.3"
+    classnames "^2.3.1"
+
+"@react-md/list@^5.1.3":
+  version "5.1.3"
+  resolved "https://registry.yarnpkg.com/@react-md/list/-/list-5.1.3.tgz#11ada39f97639a2681e6356ad361586de3bae095"
+  integrity sha512-ySK5ltRpmJ1LhgeADw0kwUAgNPeAoV3KQrKnqBkSqwr0YaEzYMMJdwLEpcf14DJ7kFR25tAW9RYvbWAIpFUZQQ==
+  dependencies:
+    "@react-md/avatar" "^5.1.3"
+    "@react-md/divider" "^5.1.3"
+    "@react-md/icon" "^5.1.3"
+    "@react-md/states" "^5.1.3"
+    "@react-md/theme" "^5.1.3"
+    "@react-md/typography" "^5.1.3"
+    "@react-md/utils" "^5.1.3"
+    classnames "^2.3.1"
+
+"@react-md/menu@^5.1.4":
+  version "5.1.4"
+  resolved "https://registry.yarnpkg.com/@react-md/menu/-/menu-5.1.4.tgz#a5d2a9330d8c2dde23a36a32e896ce5b3a751813"
+  integrity sha512-x+5qcHuxM2Hl31yoqi/3McUAjP1Fm1rRIhhG7Si0eqYIuZ0N4F+arYAIJchzWIwOCJtYJqu7R/5z5YNHqpS5ZA==
+  dependencies:
+    "@react-md/app-bar" "^5.1.3"
+    "@react-md/button" "^5.1.3"
+    "@react-md/divider" "^5.1.3"
+    "@react-md/elevation" "^5.1.3"
+    "@react-md/icon" "^5.1.3"
+    "@react-md/list" "^5.1.3"
+    "@react-md/portal" "^5.1.0"
+    "@react-md/sheet" "^5.1.3"
+    "@react-md/states" "^5.1.3"
+    "@react-md/theme" "^5.1.3"
+    "@react-md/transition" "^5.1.3"
+    "@react-md/typography" "^5.1.3"
+    "@react-md/utils" "^5.1.3"
+    classnames "^2.3.1"
+
+"@react-md/overlay@^5.1.3":
+  version "5.1.3"
+  resolved "https://registry.yarnpkg.com/@react-md/overlay/-/overlay-5.1.3.tgz#4e18ca9775dac78984113d0d1f5a31a7b85e4353"
+  integrity sha512-1yMG5Y53FSnN6jzJ78p/Ux12XLmjDABoHKPGjHHk5n3/DxFjADK3nGGPZHQiY2d7P+GKqi6X36SU2Vdg+2RjEw==
+  dependencies:
+    "@react-md/portal" "^5.1.0"
+    "@react-md/theme" "^5.1.3"
+    "@react-md/transition" "^5.1.3"
+    "@react-md/utils" "^5.1.3"
+    classnames "^2.3.1"
+
+"@react-md/portal@^5.1.0":
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/@react-md/portal/-/portal-5.1.0.tgz#e286f77eac11d829c51ac6d09bef24f34eb34512"
+  integrity sha512-f8kY7G2tAFKPXEVqkuBk5Kv1Pk4ICO+ZzC4jLJOISKGaVMs0jVTJfKyngj3/EnI4eYZzKqCO3OACI/3Khl5OyA==
+
+"@react-md/sheet@^5.1.3":
+  version "5.1.3"
+  resolved "https://registry.yarnpkg.com/@react-md/sheet/-/sheet-5.1.3.tgz#c9482d122cf8cbf16c0ce49da735a84bdeb26601"
+  integrity sha512-sd7JQU0Cfuq6U4iRJoza9QG6NMh1Hx1CFOgqVSu7h0Y76N3D3Zg4WSqNPeR/7aexrIOyNMuKYLY6kBXnXPyLKg==
+  dependencies:
+    "@react-md/dialog" "^5.1.3"
+    "@react-md/elevation" "^5.1.3"
+    "@react-md/overlay" "^5.1.3"
+    "@react-md/theme" "^5.1.3"
+    "@react-md/transition" "^5.1.3"
+    "@react-md/utils" "^5.1.3"
+    classnames "^2.3.1"
+
+"@react-md/states@^5.1.3":
+  version "5.1.3"
+  resolved "https://registry.yarnpkg.com/@react-md/states/-/states-5.1.3.tgz#46efcb944bd40d610c85b7cfcee42557c88c7baa"
+  integrity sha512-RsKZ8Vb+QorIckuKoLOs5Paykt6TrHBcFSjgh4JXR0KbqJKMIQwUDvmAvmtYLNt8akFNLtrAV77ceODqW/Gr7Q==
+  dependencies:
+    "@react-md/theme" "^5.1.3"
+    "@react-md/transition" "^5.1.3"
+    "@react-md/utils" "^5.1.3"
+    classnames "^2.3.1"
+
+"@react-md/theme@^5.1.3":
+  version "5.1.3"
+  resolved "https://registry.yarnpkg.com/@react-md/theme/-/theme-5.1.3.tgz#c270f4815b47faef1fd3762aba94d5896aa82c11"
+  integrity sha512-Hsj9+UfrhIcPS88s+WCVvFRWZ1f+p/lAT18W4D/o+LiKBYZKb/lKZgC8d8oBdzUyXoFW9T49TS5ZrYtba8nz/Q==
+  dependencies:
+    "@react-md/utils" "^5.1.3"
+
+"@react-md/transition@^5.1.3":
+  version "5.1.3"
+  resolved "https://registry.yarnpkg.com/@react-md/transition/-/transition-5.1.3.tgz#05088e99df20fcbff800dbf0d6111eae144d41a8"
+  integrity sha512-qPivx4btoYWX1setROaFVbhP3AzB3OCLggu/MUk05Rr3De67M0vzeKTUS/E6KfObXSPE8xkZ3TRD4HsxYxWXyg==
+  dependencies:
+    "@react-md/portal" "^5.1.0"
+    "@react-md/theme" "^5.1.3"
+    "@react-md/utils" "^5.1.3"
+    classnames "^2.3.1"
+
+"@react-md/typography@^5.1.3":
+  version "5.1.3"
+  resolved "https://registry.yarnpkg.com/@react-md/typography/-/typography-5.1.3.tgz#47b550fefe3fc98bfef6bd8d3fd619e90879951d"
+  integrity sha512-3ormhB3/lwm5Bvq2lehVbY7Q/wP5WznL03dg+mh5EudyyQE0gJ8v7f06l1rMI96O34fjuhdKY/0Qz9u51rvnsg==
+  dependencies:
+    "@react-md/theme" "^5.1.3"
+    "@react-md/utils" "^5.1.3"
+    classnames "^2.3.1"
+
+"@react-md/utils@^5.1.3":
+  version "5.1.3"
+  resolved "https://registry.yarnpkg.com/@react-md/utils/-/utils-5.1.3.tgz#64a98aee3a15c1744091e7177d45f2972e35fc52"
+  integrity sha512-orSXDoYa655vCvnpAWCjCtTGc/t8XQKimSn61SIZ5Y7a5oY/ft7n9pLraf921zsfvUIhqnd0e+tPQBd9L9OPQA==
+  dependencies:
+    "@juggle/resize-observer" "^3.3.0"
+    classnames "^2.3.1"
 
 "@rollup/plugin-babel@^5.2.0":
   version "5.3.1"
@@ -3153,6 +3345,11 @@ cjs-module-lexer@^1.0.0:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/cjs-module-lexer/-/cjs-module-lexer-1.2.2.tgz#9f84ba3244a512f3a54e5277e8eef4c489864e40"
   integrity sha512-cOU9usZw8/dXIXKtwa8pM0OTJQuJkxMN6w30csNRUerHfeQ5R6U3kkU/FtJeIf3M202OHfY2U8ccInBG7/xogA==
+
+classnames@^2.3.1:
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.3.1.tgz#dfcfa3891e306ec1dad105d0e88f4417b8535e8e"
+  integrity sha512-OlQdbZ7gLfGarSqxesMesDa5uz7KFbID8Kpq/SxIoNGDqY8lSYs0D+hhtBXhcdB3rcbXArFr7vlHheLk1voeNA==
 
 clean-css@^5.2.2:
   version "5.3.1"
