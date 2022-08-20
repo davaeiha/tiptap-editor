@@ -1,30 +1,36 @@
-import React, { useContext } from "react";
-import { useEditor } from "@tiptap/react";
+import React from "react";
+import { ReactNodeViewRenderer, useEditor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import Node from "../components/Extension.js";
+import Focus from "@tiptap/extension-focus";
+import ListItem from "@tiptap/extension-list-item";
+import ListItemNodeWrapper from "../components/ListItemNodeWrapper";
 
 export const EditorContext = React.createContext();
 
 export const EditorProvider = ({ children }) => {
-  const editor = useEditor({
-    extensions: [StarterKit, Node],
-    content: `
-        <p>This is a boring paragraph.</p>
-        <div data-type="draggable-item">
-          <p>Followed by a fancy draggable item.</p>
-        </div>
-        <div data-type="draggable-item">
-          <p>And another draggable item.</p>
-          <div data-type="draggable-item">
-            <p>And a nested one.</p>
-            <div data-type="draggable-item">
-              <p>But can we go deeper?</p>
-            </div>
-          </div>
-        </div>
-        <p>Let’s finish with a boring paragraph.</p>   
-        <draggableItem toggleDropDown={toggleDropDown}><p></p></draggableItem>
-        `,
+  const customListItem = ListItem.extend({
+    addNodeView() {
+      return ReactNodeViewRenderer(ListItemNodeWrapper);
+    },
+    draggable: true,
   });
-  return <EditorContext.Provider value={ editor }>{children}</EditorContext.Provider>;
+
+  const editor = useEditor({
+    extensions: [
+      StarterKit.configure({
+        listItem: false,
+      }),
+      Node,
+      Focus.configure({
+        mode: "all",
+      }),
+      customListItem,
+    ],
+    autofocus: true,
+    content: `<div data-type='draggable-item'><p></p></div>`,
+  });
+  return (
+    <EditorContext.Provider value={editor}>{children}</EditorContext.Provider>
+  );
 };
