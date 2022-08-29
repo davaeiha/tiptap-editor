@@ -4,16 +4,28 @@ import StarterKit from "@tiptap/starter-kit";
 import Node from "../components/Extension.js";
 import Focus from "@tiptap/extension-focus";
 import ListItem from "@tiptap/extension-list-item";
+import UniqueID from "@tiptap/extension-unique-id";
 import ListItemNodeWrapper from "../components/ListItemNodeWrapper";
 
 export const EditorContext = React.createContext();
 
 export const EditorProvider = ({ children }) => {
-  const customListItem = ListItem.extend({
+  const wrappedListItem = ListItem.extend({
+    name: "listItem",
+    draggable: true,
+    // parseHTML() {
+    //   return [
+    //     {
+    //       tag: `div[data-type="list-item"]`,
+    //     },
+    //     {
+    //       tag: "listItem",
+    //     },
+    //   ];
+    // },
     addNodeView() {
       return ReactNodeViewRenderer(ListItemNodeWrapper);
     },
-    draggable: true,
   });
 
   const editor = useEditor({
@@ -21,15 +33,20 @@ export const EditorProvider = ({ children }) => {
       StarterKit.configure({
         listItem: false,
       }),
+      UniqueID.configure({
+        types: ["heading", "paragraph", "listItem"],
+      }),
       Node,
       Focus.configure({
         mode: "all",
       }),
-      customListItem,
+      wrappedListItem,
     ],
+    injectCSS: true,
     autofocus: true,
-    content: `<div data-type='draggable-item'><p></p></div>`,
+    content: `<div data-type='draggable-item'><p data-type="paragraph"></p></div>`,
   });
+
   return (
     <EditorContext.Provider value={editor}>{children}</EditorContext.Provider>
   );

@@ -1,6 +1,6 @@
 import { mergeAttributes, Node } from "@tiptap/core";
 import { ReactNodeViewRenderer } from "@tiptap/react";
-import NodeWrapper from "./NodeWrapper";
+import DivNodeWrapper from "../components/DivNodeWrapper";
 
 export default Node.create({
   name: "draggableItem",
@@ -26,7 +26,7 @@ export default Node.create({
           this.editor.commands.splitBlock();
           this.editor.commands.liftEmptyBlock();
           return this.editor.commands.insertContent(
-            "<div data-type='draggable-item'><p></p></div>"
+            `<draggableItem><p data-type="paragraph"></p></draggableItem>`
           );
         }
       },
@@ -47,12 +47,15 @@ export default Node.create({
   renderHTML({ HTMLAttributes }) {
     return [
       "div",
-      mergeAttributes(HTMLAttributes, { "data-type": "draggable-item" }),
+      mergeAttributes(HTMLAttributes, {
+        "data-type": "draggable-item",
+        draggable: "true",
+      }),
       0,
     ];
   },
 
   addNodeView() {
-    return ReactNodeViewRenderer(NodeWrapper);
+    return ReactNodeViewRenderer(DivNodeWrapper);
   },
 });

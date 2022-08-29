@@ -1,64 +1,69 @@
 .menu {
-    display: flex;
-    flex-direction: column;
     position: relative;
-
-    .dropdown {
-        position: absolute;
-        top: 10px;
-        right: 15px;
-        width: 150px;
-        background-color: var(--bg);
-        border: var(--border);
-        border-radius: var(--border-radius);
-        padding: 1rem;
-        box-shadow:  5px 10px 8px 1px #888888 ;
-        overflow: hidden;
-        z-index: 10;
-        .container {
-            width: 100%;
-            button {
-                height: 50px;
-                display: flex;
-                align-items: center;
-                border: none;
-                background: transparent;
-                font-size: 0.85rem;
-                color: var(--text-color);
-                font-weight: 500;
-                padding: 0 0.2rem;
-                opacity: 0.6;
-            
-                &:hover,
-                &.is-active {
-                  opacity: 1;
-                }
+    .menu-container {
+        display: flex;
+        flex-direction: column;
+        .icon-container{
+            display: flex;
+            width: 2rem;
+            justify-content: center;
+            align-self: center;
+            gap: 0.5rem;
+            position: absolute;
+            right: 10px;
+        
+            .menu-icon > img{
+                width: 20px;
+                height: 20px;
+                cursor: pointer;
+                z-index: 1;
+            }
+        
+            .delete-icon > img{
+                width: 20px;
+                height: 20px;
+                cursor: pointer;
+                z-index: 1;
             }
         }
-        
-    }
-    
-    .menu-icon {
-        width: 1rem;
-        height: 1rem;
-        background-image: url('data:image/svg+xml;charset=UTF-8,<svg width="16px" height="16px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-three-dots-vertical"><path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/></svg>');
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-position: center;
-        cursor: pointer;
-        z-index: 1;
-    }
 
-    .delete-icon {
-        width: 0.5rem;
-        height: 0.5rem;
-        margin-top: 1rem;
-        background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="256" height="256" viewBox="0 0 256 256" xml:space="preserve"><defs></defs><g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;" transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)" ><path d="M 47.098 45 L 89.565 2.532 c 0.58 -0.579 0.58 -1.519 0 -2.098 c -0.579 -0.58 -1.518 -0.58 -2.098 0 L 45 42.902 L 2.532 0.435 c -0.58 -0.58 -1.518 -0.58 -2.098 0 c -0.58 0.579 -0.58 1.519 0 2.098 L 42.902 45 L 0.435 87.468 c -0.58 0.579 -0.58 1.518 0 2.098 C 0.724 89.855 1.104 90 1.484 90 s 0.759 -0.145 1.049 -0.435 L 45 47.098 l 42.468 42.468 c 0.29 0.29 0.669 0.435 1.049 0.435 s 0.759 -0.145 1.049 -0.435 c 0.58 -0.58 0.58 -1.518 0 -2.098 L 47.098 45 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" /></g></svg>');
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-position: center;
-        cursor: pointer;
-        z-index: 1;
+        .dropdown {
+            position: absolute;
+            top: 10px;
+            right: 45px;
+            width: 150px;
+            background-color: var(--bg);
+            border: var(--border);
+            border-radius: var(--border-radius);
+            padding: 1rem;
+            box-shadow:  5px 10px 8px 1px #888888 ;
+            overflow: hidden;
+            z-index: 10;
+            .container {
+                width: 100%;
+                .item {
+                    height: 50px;
+                    display: flex;
+                    gap: 1rem;
+                    align-items: center;
+                    border: none;
+                    background: transparent;
+                    font-size: 0.85rem;
+                    color: var(--text-color);
+                    font-weight: 500;
+                    padding: 0 0.2rem;
+                    opacity: 0.6;
+                    cursor: pointer;
+                    &:hover,
+                    &.is-active {
+                    opacity: 1;
+                    }
+                    .item-icon {
+                        width: 30px;
+                        height: 30px;
+                    }
+                }
+            }   
+        }
     }
-    
 }

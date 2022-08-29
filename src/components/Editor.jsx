@@ -1,6 +1,5 @@
 import React, {useContext} from "react";
 import { EditorContent} from '@tiptap/react';
-
 import { EditorContext } from "../contexts/EditorContext";
 
 
