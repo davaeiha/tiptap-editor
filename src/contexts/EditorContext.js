@@ -44,7 +44,7 @@ export const EditorProvider = ({ children }) => {
     ],
     injectCSS: true,
     autofocus: true,
-    content: `<div data-type='draggable-item'><p data-type="paragraph"></p></div>`,
+    content: `<div data-type='draggable-item'><p></p></div>`,
   });
 
   return (

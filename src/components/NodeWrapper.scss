@@ -1,16 +1,81 @@
 .draggable-item {
     display: flex;
     border-radius: 0.5rem;
-    // box-shadow:
-    //   0 0 0 1px rgba(0, 0, 0, 0.05),
-    //   0px 10px 20px rgba(0, 0, 0, 0.1);
+    // border: 1px solid black;
     
-    .drag-handle {
-        width: 2rem;
-        img {
-            width: 40px;
-            // position: relative;
-            cursor: grab;
+    .handle-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .drag-handle {
+            width: 2rem;
+            display: flex;
+            justify-content: center;
+            img {
+                width: 30px;
+                cursor: grab;
+            }
+        }
+
+        .vertical-line {
+            height: 100%;
+            margin: 0 18px 6px 0;
+            background-image: linear-gradient(black 33%, rgba(255,255,255,0) 0%);
+            background-position: right;
+            background-size: 5px 5px;
+            background-repeat: repeat-y;
+        }
+
+        .plus-handle {
+            display: flex;
+            // flex-direction: column;
+            justify-content: center;
+            width: 2rem;
+            img {
+                width: 15px;
+                padding-bottom:0.5rem ;
+                cursor: pointer;
+            }
+            .dropdown {
+                position: absolute;
+                top: 10px;
+                right: 45px;
+                width: 150px !important;
+                background-color: var(--bg);
+                border: var(--border);
+                border-radius: var(--border-radius);
+                padding: 1rem;
+                box-shadow:  5px 10px 8px 1px #888888 ;
+                overflow: hidden;
+                z-index: 10;
+                .container {
+                    width: 100%;
+                    .item {
+                        height: 50px;
+                        display: flex;
+                        gap: 1rem;
+                        align-items: center;
+                        border: none;
+                        background: transparent;
+                        font-size: 0.85rem;
+                        color: var(--text-color);
+                        font-weight: 500;
+                        padding: 0 0.2rem;
+                        opacity: 0.6;
+                        cursor: pointer;
+                        &:hover,
+                        &.is-active {
+                        opacity: 1;
+                        }
+                        .item-icon {
+                            width: 30px;
+                            height: 30px;
+                        }
+                    }
+                }   
+            }
+            
         }
     }
     
@@ -20,7 +85,7 @@
         div {
             p,h1,h2,h3 {
                 margin: 0;
-                padding: 1rem 2rem 0 0;
+                padding: 0.5rem 2rem 0 0;
             }
             ul,ol{
                 padding: 0;
