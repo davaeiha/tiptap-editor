@@ -18,6 +18,6 @@ code {
     --border-radius: 8px;
 }
 
-@import './components/NodeWrapper.scss';
-@import './components/Dropdown.scss';
+@import './components/wrappers/NodeWrapper.scss';
+@import './components/menu/Dropdown.scss';
 @import './components/Editor.scss';

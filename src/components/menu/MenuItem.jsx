@@ -1,18 +1,17 @@
 import React, { useContext } from 'react';
-import PropTypes from 'prop-types';
-import { EditorContext } from '../contexts/EditorContext';
-import paragraphIcon from '../assets/paragraph.svg';
-import bulletIcon from '../assets/bullet.svg';
-import numberedIcon from '../assets/numbered.svg';
-import h1Icon from '../assets/h1.svg';
-import h2Icon from '../assets/h2.svg';
-import h3Icon from '../assets/h3.svg';
+import { EditorContext } from '../../contexts/EditorContext';
+import paragraphIcon from '../../assets/items/paragraph.svg';
+import bulletIcon from '../../assets/items/bullet.svg';
+import numberedIcon from '../../assets/items/numbered.svg';
+import h1Icon from '../../assets/items/h1.svg';
+import h2Icon from '../../assets/items/h2.svg';
+import h3Icon from '../../assets/items/h3.svg';
+import articleIcon from '../../assets/items/book.svg';
 import Item from './Item';
 
 const MenuItem = ({setMenu}) => {
     const editor = useContext(EditorContext);
     
-
     const paragraphHandler = () => {
         if (editor.isActive('bulletList')) {
             editor.commands.toggleBulletList();
@@ -76,6 +75,10 @@ const MenuItem = ({setMenu}) => {
         setMenu(false);
     }
 
+    const articleHandler = () => {
+
+    }
+
     const items=[
         {
             id:1,
@@ -119,6 +122,13 @@ const MenuItem = ({setMenu}) => {
             icon:h3Icon,
             onClick:headingHandler,
         },
+        {
+            id:7,
+            name:"Article",
+            activation:"article",
+            icon:articleIcon,
+            onClick:articleHandler
+        }
     ]
 
 
