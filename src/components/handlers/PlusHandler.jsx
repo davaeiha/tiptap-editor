@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import plusIcon from '../../assets/handlers/plus.svg';
 import { EditorContext } from '../../contexts/EditorContext';
 import MenuItem from '../menu/MenuItem';
@@ -17,6 +17,10 @@ const PlusHandler = ({node,getPos,hover,clickHandler}) => {
     }
 
     const menuRef = useRef(null);
+
+    useEffect(()=>{
+        setMenu(false);
+    },[hover]);
 
     return (
         <div 
