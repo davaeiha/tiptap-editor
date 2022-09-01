@@ -8,21 +8,6 @@ const DropdownMenu = ({hover,setSection,pos}) => {
     const [menu,setMenu] = useState(false);
     const menuRef = useRef(null);
     
-    useEffect(() => {
-        const checkIfClickedOutside = e => {
-            if (menu && menuRef.current && !menuRef.current.contains(e.target)) {
-                setMenu(false);
-            }
-        }
-
-        document.addEventListener("mousedown", checkIfClickedOutside);
-
-        return () => {
-            document.removeEventListener("mousedown", checkIfClickedOutside);
-        }
-    }, [menu]);
-
-    
     
     return (
         <div className='menu'>
@@ -32,7 +17,7 @@ const DropdownMenu = ({hover,setSection,pos}) => {
                     <CloseHandler setSection={setSection}/>
                 </div>
                 {
-                    menu && <MenuItem setMenu={setMenu}/>
+                    menu && <MenuItem menu={menu} menuRef={menuRef} setMenu={setMenu}/>
                 }
             </div>
         </div>

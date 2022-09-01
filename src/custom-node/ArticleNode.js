@@ -1,6 +1,6 @@
 import { mergeAttributes, Node } from "@tiptap/core";
 import { ReactNodeViewRenderer } from "@tiptap/react";
-
+import ArticleNodeWrapper from "../components/wrappers/ArticleNodeWrapper";
 
 export default Node.create({
   name: "ArticleItem",
@@ -34,6 +34,6 @@ export default Node.create({
   },
 
   addNodeView() {
-    return ReactNodeViewRenderer();
+    return ReactNodeViewRenderer(ArticleNodeWrapper);
   },
 });

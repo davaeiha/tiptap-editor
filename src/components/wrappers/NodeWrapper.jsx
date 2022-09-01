@@ -37,7 +37,7 @@ export default (props) => {
                   contentEditable="false"
                   suppressContentEditableWarning="false"
                 /> 
-                <PlusHandler hover={hover} getPos={props.getPos}/>
+                <PlusHandler hover={hover} getPos={props.getPos} node={props.node}/>
               </>
             }
           </div>

@@ -1,8 +1,6 @@
 .draggable-item {
     display: flex;
     border-radius: 0.5rem;
-    // border: 1px solid black;
-    
     .handle-container {
         display: flex;
         flex-direction: column;
@@ -29,9 +27,9 @@
 
         .plus-handle {
             display: flex;
-            // flex-direction: column;
             justify-content: center;
             width: 2rem;
+            position: relative;
             img {
                 width: 15px;
                 padding-bottom:0.5rem ;
@@ -40,7 +38,7 @@
             .dropdown {
                 position: absolute;
                 top: 10px;
-                right: 45px;
+                right: 20px;
                 width: 150px !important;
                 background-color: var(--bg);
                 border: var(--border);

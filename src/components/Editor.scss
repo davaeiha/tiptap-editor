@@ -4,8 +4,7 @@
   border: var(--border);
   border-radius: var(--border-radius);
   margin-top: 1rem;
-  // padding: 1rem ;
-
+  
   .ProseMirror {
     > * + * {
       margin-top: 0.75em;

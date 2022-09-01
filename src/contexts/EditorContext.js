@@ -1,7 +1,8 @@
 import React from "react";
 import { ReactNodeViewRenderer, useEditor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
-import Node from "../custom-node/DraggableNode.js";
+import DraggableNode from "../custom-node/DraggableNode.js";
+import ArticleNode from "../custom-node/ArticleNode.js";
 import Focus from "@tiptap/extension-focus";
 import ListItem from "@tiptap/extension-list-item";
 import UniqueID from "@tiptap/extension-unique-id";
@@ -36,7 +37,8 @@ export const EditorProvider = ({ children }) => {
       UniqueID.configure({
         types: ["heading", "paragraph", "listItem"],
       }),
-      Node,
+      DraggableNode,
+      ArticleNode,
       Focus.configure({
         mode: "all",
       }),
@@ -44,7 +46,8 @@ export const EditorProvider = ({ children }) => {
     ],
     injectCSS: true,
     autofocus: true,
-    content: `<div data-type='draggable-item'><p></p></div>`,
+    content: `<ArticleItem><div data-type='draggable-item'><p></p></div></ArticleItem>`,
+    // content: `<div data-type='draggable-item'><p></p></div>`,
   });
 
   return (

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { EditorContext } from '../../contexts/EditorContext';
 import paragraphIcon from '../../assets/items/paragraph.svg';
 import bulletIcon from '../../assets/items/bullet.svg';
@@ -9,8 +9,22 @@ import h3Icon from '../../assets/items/h3.svg';
 import articleIcon from '../../assets/items/book.svg';
 import Item from './Item';
 
-const MenuItem = ({setMenu}) => {
+const MenuItem = ({menu,menuRef,setMenu}) => {
     const editor = useContext(EditorContext);
+
+    useEffect(() => {
+        const checkIfClickedOutside = e => {
+            if (menu && menuRef.current && !menuRef.current.contains(e.target)) {
+                setMenu(false);
+            }
+        }
+
+        document.addEventListener("mousedown", checkIfClickedOutside);
+
+        return () => {
+            document.removeEventListener("mousedown", checkIfClickedOutside);
+        }
+    }, [menu]);
     
     const paragraphHandler = () => {
         if (editor.isActive('bulletList')) {
@@ -76,7 +90,13 @@ const MenuItem = ({setMenu}) => {
     }
 
     const articleHandler = () => {
-
+        editor
+        .chain()
+        .selectParentNode()
+        .selectParentNode()
+        .wrapIn('ArticleItem')
+        .run();
+        setMenu(false);
     }
 
     const items=[
