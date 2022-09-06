@@ -19,16 +19,20 @@ export default (props) => {
     editor.commands.focus(props.getPos()+2);
   },[]);
   
+  const firstChild = props.node.firstChild?.type?.name;
 
   return (
     <>
       {section && <NodeViewWrapper
         className="draggable-item"
+        data-type="draggable-item"
         onMouseOver={()=>setHover(true)}
         onMouseOut={()=>setHover(false)}
         >
-          <div className='handle-container'>
-            <DragHandler hover={hover}/>
+          {
+            (firstChild === 'bulletList'||firstChild === 'orderedList') || 
+            <div className='handle-container'>
+              <DragHandler hover={hover}/>
             {
               props.node.content.content.length > 1 && <>
                 <div
@@ -40,16 +44,21 @@ export default (props) => {
                 <PlusHandler hover={hover} getPos={props.getPos} node={props.node}/>
               </>
             }
-          </div>
+            </div>
+          }
+          
 
           {props.children}
+          {
+            (firstChild === 'bulletList'||firstChild === 'orderedList') ||
+            <DropdownMenu
+              className="dropdown"
+              pos={props.getPos} 
+              setSection={setSection} 
+              hover={hover}
+            />
+          }
           
-          <DropdownMenu
-            className="dropdown"
-            pos={props.getPos} 
-            setSection={setSection} 
-            hover={hover}
-          />
         </NodeViewWrapper>
       }
     </>
