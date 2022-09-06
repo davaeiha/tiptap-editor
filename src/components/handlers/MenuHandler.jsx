@@ -7,7 +7,14 @@ const MenuHandler = ({menu,setMenu,pos}) => {
     const editor = useContext(EditorContext);
 
     const menuHandler = (e) => {
-        editor.commands.focus(pos()+2);
+        // editor.commands.focus(pos()+2);
+        editor
+        .chain()
+        .focus(pos()+2)
+        .selectParentNode()
+        .run();
+
+
         setMenu(!menu);
     }
 

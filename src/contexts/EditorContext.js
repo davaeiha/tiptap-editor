@@ -29,7 +29,7 @@ export const EditorProvider = ({ children }) => {
     },
   });
 
-  const wrappedOrderedtList = OrderedList.configure({
+  const divOrderedtList = OrderedList.configure({
     itemTypeName: "listItem",
   }).extend({
     whitespace: "normal",
@@ -45,7 +45,7 @@ export const EditorProvider = ({ children }) => {
     },
   });
 
-  const wrappedBulletList = BulletList.configure({
+  const divBulletList = BulletList.configure({
     itemTypeName: "listItem",
   }).extend({
     whitespace: "normal",
@@ -77,8 +77,8 @@ export const EditorProvider = ({ children }) => {
         mode: "all",
       }),
       wrappedListItem,
-      wrappedBulletList,
-      wrappedOrderedtList,
+      divBulletList,
+      divOrderedtList,
     ],
     injectCSS: true,
     autofocus: true,

@@ -19,7 +19,7 @@ export default (props) => {
     editor.commands.focus(props.getPos()+2);
   },[]);
   
-  const firstChild = props.node.firstChild?.type?.name;
+  const firstChild = props.node?.firstChild?.type?.name;
 
   return (
     <>
