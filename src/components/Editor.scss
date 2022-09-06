@@ -10,13 +10,36 @@
       margin-top: 0.75em;
     }
   
-  ul,
-  ol {
-    padding: 0;
-  }
+    ul,
+    ol {
+      padding: 0;
+    }
 
-  &:focus-visible{
-    outline: none;
-  }
+    &:focus-visible{
+      outline: none;
+    }
+
+    .ordered-list{
+      list-style-type: none;
+      counter-reset: css-counter 0;
+      .list-item{
+        display: flex;
+        padding: 0.5rem 0.5rem 0 0;
+        counter-increment: css-counter 1;
+        margin: 0;
+        &:before{
+          content: counter(css-counter) ".  "
+        }
+        p{
+          padding: 0;
+        }
+      }
+    }
+
+    .bullet-list {
+      .list-item {
+          display: list-item;
+      }
+    }
   }
 }

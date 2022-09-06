@@ -1,10 +1,13 @@
 import React from "react";
 import { ReactNodeViewRenderer, useEditor } from "@tiptap/react";
+import { mergeAttributes } from "@tiptap/core";
 import StarterKit from "@tiptap/starter-kit";
 import DraggableNode from "../custom-node/DraggableNode.js";
 import ArticleNode from "../custom-node/ArticleNode.js";
 import Focus from "@tiptap/extension-focus";
 import ListItem from "@tiptap/extension-list-item";
+import BulletList from "@tiptap/extension-bullet-list";
+import OrderedList from "@tiptap/extension-ordered-list";
 import UniqueID from "@tiptap/extension-unique-id";
 import ListItemNodeWrapper from "../components/wrappers/ListItemNodeWrapper";
 
@@ -14,18 +17,47 @@ export const EditorProvider = ({ children }) => {
   const wrappedListItem = ListItem.extend({
     name: "listItem",
     draggable: true,
-    // parseHTML() {
-    //   return [
-    //     {
-    //       tag: `div[data-type="list-item"]`,
-    //     },
-    //     {
-    //       tag: "listItem",
-    //     },
-    //   ];
-    // },
+    parseHTML() {
+      return [
+        {
+          tag: `div[data-type="list-item"]`,
+        },
+      ];
+    },
     addNodeView() {
       return ReactNodeViewRenderer(ListItemNodeWrapper);
+    },
+  });
+
+  const wrappedOrderedtList = OrderedList.configure({
+    itemTypeName: "listItem",
+  }).extend({
+    whitespace: "normal",
+    renderHTML({ HTMLAttributes }) {
+      return [
+        "div",
+        mergeAttributes(HTMLAttributes, {
+          "data-type": "ordered-list",
+          class: "ordered-list",
+        }),
+        0,
+      ];
+    },
+  });
+
+  const wrappedBulletList = BulletList.configure({
+    itemTypeName: "listItem",
+  }).extend({
+    whitespace: "normal",
+    renderHTML({ HTMLAttributes }) {
+      return [
+        "div",
+        mergeAttributes(HTMLAttributes, {
+          "data-type": "bullet-list",
+          class: "bullet-list",
+        }),
+        0,
+      ];
     },
   });
 
@@ -33,6 +65,8 @@ export const EditorProvider = ({ children }) => {
     extensions: [
       StarterKit.configure({
         listItem: false,
+        bulletList: false,
+        orderedList: false,
       }),
       UniqueID.configure({
         types: ["heading", "paragraph", "listItem"],
@@ -43,6 +77,8 @@ export const EditorProvider = ({ children }) => {
         mode: "all",
       }),
       wrappedListItem,
+      wrappedBulletList,
+      wrappedOrderedtList,
     ],
     injectCSS: true,
     autofocus: true,

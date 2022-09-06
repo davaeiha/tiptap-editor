@@ -7,9 +7,9 @@ const ListItemNodeWrapper = (props) => {
   return (
     <>
         <NodeWrapper {...props}>
-          <li className='list-item' data-type="list-item" >
+          <div className='list-item' data-type="list-item" >
             <NodeViewContent className="content" />
-          </li>
+          </div>
         </NodeWrapper>
     </>
   )
