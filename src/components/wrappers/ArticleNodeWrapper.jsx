@@ -1,18 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { NodeViewWrapper,NodeViewContent } from '@tiptap/react';
 import DragHandler from '../handlers/DragHandler';
 import PlusHandler from '../handlers/PlusHandler';
 import CloseHandler from '../handlers/CloseHandler';
-import nextIcon from '../../assets/handlers/next.svg';
-import perviousIcon from '../../assets/handlers/previous.svg';
-import plusIcon from '../../assets/handlers/plus.svg';
+
 import viewIcon from '../../assets/handlers/view.svg';
+import VersionHandler from '../handlers/VersionHandler';
 
 
 const ArticleNodeWrapper = props => {
 
     const [section,setSection] = useState(true);
     const [hover,setHover] = useState(false);
+    const versions=[];
+    const [selectedVersion,setSeletedVersion] = useState(versions[0]);
+    useEffect(()=>{
+        //api call for fetching data from server.
+
+    },[]);
+    
 
     return (
         <>
@@ -38,14 +44,7 @@ const ArticleNodeWrapper = props => {
                     >
                         <div className='title'>New Article</div>
                         <div className="article-handler">
-                            <div className='version'>
-                                <p>version</p>
-                                <div className='icons'>
-                                    <img src={perviousIcon} alt="previous" />
-                                    <img src={plusIcon} alt="new" />
-                                    <img src={nextIcon} alt="next" />
-                                </div>
-                            </div>
+                            <VersionHandler versions={versions} setSeletedVersion={setSeletedVersion}/>
                             <div className='open-close'>
                                 <img src={viewIcon} alt="open" />
                                 <CloseHandler setSection={setSection}/>
