@@ -2,18 +2,16 @@ import React, { useContext } from 'react'
 import { EditorContext } from '../../contexts/EditorContext';
 import menuIcon from '../../assets/handlers/three-dots.svg';
 
-
 const MenuHandler = ({menu,setMenu,pos}) => {
     const editor = useContext(EditorContext);
 
-    const menuHandler = (e) => {
-        // editor.commands.focus(pos()+2);
+    const menuHandler = () => {
+        
         editor
         .chain()
         .focus(pos()+2)
         .selectParentNode()
         .run();
-
 
         setMenu(!menu);
     }

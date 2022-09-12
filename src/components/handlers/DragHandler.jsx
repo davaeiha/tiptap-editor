@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{memo} from 'react';
 import dragIcon from '../../assets/handlers/drag.svg';
 
 const DragHandler = ({hover}) => {
@@ -15,4 +15,4 @@ const DragHandler = ({hover}) => {
   )
 }
 
-export default DragHandler;
+export default memo(DragHandler);

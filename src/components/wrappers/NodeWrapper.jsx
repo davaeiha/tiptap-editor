@@ -6,6 +6,7 @@ import { EditorContext } from '../../contexts/EditorContext';
 
 import PlusHandler from '../handlers/PlusHandler';
 import DragHandler from '../handlers/DragHandler';
+import { useCallback } from 'react';
 
 export default (props) => {
   
@@ -21,6 +22,7 @@ export default (props) => {
   
   const firstChild = props.node?.firstChild?.type?.name;
 
+  
   return (
     <>
       {section && <NodeViewWrapper
@@ -41,7 +43,9 @@ export default (props) => {
                   contentEditable="false"
                   suppressContentEditableWarning="false"
                 /> 
-                <PlusHandler hover={hover} getPos={props.getPos} node={props.node}/>
+                <PlusHandler hover={hover} 
+                getPos={props.getPos} nodeSize={props.node.nodeSize}
+                />
               </>
             }
             </div>
@@ -58,7 +62,6 @@ export default (props) => {
               hover={hover}
             />
           }
-          
         </NodeViewWrapper>
       }
     </>

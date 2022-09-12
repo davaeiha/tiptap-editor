@@ -5,13 +5,11 @@ import NodeWrapper from './NodeWrapper';
 const ListItemNodeWrapper = (props) => {
   
   return (
-    <>
-        <NodeWrapper {...props}>
-          <div className='list-item' data-type="list-item" >
-            <NodeViewContent className="content" />
-          </div>
-        </NodeWrapper>
-    </>
+    <NodeWrapper {...props}>
+      <div className='list-item' data-type="list-item" >
+        <NodeViewContent className="content" />
+      </div>
+    </NodeWrapper> 
   )
 }
 

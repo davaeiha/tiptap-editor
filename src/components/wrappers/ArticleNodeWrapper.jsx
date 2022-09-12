@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState,useReducer } from 'react';
 import { NodeViewWrapper,NodeViewContent } from '@tiptap/react';
 import DragHandler from '../handlers/DragHandler';
 import PlusHandler from '../handlers/PlusHandler';
@@ -6,19 +6,14 @@ import CloseHandler from '../handlers/CloseHandler';
 
 import viewIcon from '../../assets/handlers/view.svg';
 import VersionHandler from '../handlers/VersionHandler';
+import useVersion from '../../hooks/useVersion';
 
 
 const ArticleNodeWrapper = props => {
 
     const [section,setSection] = useState(true);
     const [hover,setHover] = useState(false);
-    const versions=[];
-    const [selectedVersion,setSeletedVersion] = useState(versions[0]);
-    useEffect(()=>{
-        //api call for fetching data from server.
-
-    },[]);
-    
+    const {selectedVersion,dispatch} = useVersion();
 
     return (
         <>
@@ -44,7 +39,7 @@ const ArticleNodeWrapper = props => {
                     >
                         <div className='title'>New Article</div>
                         <div className="article-handler">
-                            <VersionHandler versions={versions} setSeletedVersion={setSeletedVersion}/>
+                            <VersionHandler selectedVersion={selectedVersion} dispatch={dispatch}/>
                             <div className='open-close'>
                                 <img src={viewIcon} alt="open" />
                                 <CloseHandler setSection={setSection}/>
@@ -52,7 +47,9 @@ const ArticleNodeWrapper = props => {
                         </div>
                     </div>
                 </div>
-                <NodeViewContent className="content"/>
+                <NodeViewContent className="content" >
+                    {selectedVersion.value}
+                </NodeViewContent>
             </div>
             </NodeViewWrapper>
         }

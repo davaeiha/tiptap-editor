@@ -6,10 +6,8 @@ import { EditorContext } from "../contexts/EditorContext";
 const Editor = () => {
   const editor = useContext(EditorContext);
 
-  return (
-    <>       
+  return (      
       <EditorContent editor={editor} className="editor"/>
-    </>
   )
 }
 

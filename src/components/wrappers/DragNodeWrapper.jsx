@@ -1,11 +1,9 @@
 /* eslint-disable import/no-anonymous-default-export */
+import React,{memo} from "react";
 import { NodeViewContent } from '@tiptap/react';
 import NodeWrapper from './NodeWrapper';
 
-const DivNodeWrapper = (props) => {
-  
-  // console.log(props.node.content)
-
+const DragNodeWrapper = (props) => {  
   return (
       <NodeWrapper {...props}>
            <NodeViewContent className="content"/>
@@ -13,4 +11,4 @@ const DivNodeWrapper = (props) => {
   )
 }
 
-export  default DivNodeWrapper;
+export default DragNodeWrapper;

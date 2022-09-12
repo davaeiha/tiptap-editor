@@ -1,13 +1,22 @@
-import React, { useContext } from 'react'
+import React, { useContext,memo } from 'react'
 import { EditorContext } from '../../contexts/EditorContext';
 
-const Item = ({activation,icon,name,onClick}) => {
+const Item = ({activation,icon,name,onClick,setMenu}) => {
 
     const editor=useContext(EditorContext);
 
+    const itemHandler = () => {
+        
+        Array.isArray(activation) ?
+        onClick(editor,activation[1]) :
+        onClick(editor)
+
+        setMenu(false);
+    }
+
     return (
         <div
-            onClick={Array.isArray(activation)?()=>onClick(activation[1]) : onClick}
+            onClick={itemHandler}
             className={
                 editor.isActive(
                     Array.isArray(activation) ? activation[0] : activation,
@@ -21,6 +30,5 @@ const Item = ({activation,icon,name,onClick}) => {
         </div>
   )
 }
-
 
 export default Item;

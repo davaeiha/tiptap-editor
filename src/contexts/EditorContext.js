@@ -82,8 +82,8 @@ export const EditorProvider = ({ children }) => {
     ],
     injectCSS: true,
     autofocus: true,
-    content: `<ArticleItem><div data-type='draggable-item'><p></p></div></ArticleItem>`,
-    // content: `<div data-type='draggable-item'><p></p></div>`,
+    // content: `<ArticleItem><div data-type='draggable-item'><p></p></div></ArticleItem>`,
+    content: `<div data-type='draggable-item'><p></p></div>`,
   });
 
   return (
