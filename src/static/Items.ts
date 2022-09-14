@@ -9,7 +9,7 @@ import { Editor } from '@tiptap/react';
 //@ts-ignore
 import {itemInterface} from '../types/item.ts';
 
-const paragraphHandler = (editor:Editor) => {
+const paragraphHandler = (editor:Editor | any ) => {
     if (editor.isActive('bulletList')) {
         editor.commands.toggleBulletList();
     }else if(editor.isActive('orderedList')){
@@ -23,7 +23,7 @@ const paragraphHandler = (editor:Editor) => {
     }
 }
 
-const bulletHandler = (editor:Editor) => {
+const bulletHandler = (editor:Editor | any) => {
     if (editor.isActive('heading')) {
         editor
         .chain()
@@ -37,7 +37,7 @@ const bulletHandler = (editor:Editor) => {
     }
 }
 
-const orderedHandler = (editor:Editor) => {
+const orderedHandler = (editor:Editor | any) => {
     if (editor.isActive('heading')) {
         editor
         .chain()
@@ -51,7 +51,7 @@ const orderedHandler = (editor:Editor) => {
     }
 }
 
-const headingHandler = (editor:Editor,level:number) => {
+const headingHandler = (editor:Editor | any,level:number) => {
     if (editor.isActive('bulletList')) {
         editor.commands.toggleBulletList();
     }else if(editor.isActive('orderedList')){
@@ -63,7 +63,7 @@ const headingHandler = (editor:Editor,level:number) => {
     .toggleHeading({level})
 }
 
-const articleHandler = (editor:Editor) => {
+const articleHandler = (editor:Editor | any) => {
     editor
     .chain()
     .selectParentNode()
