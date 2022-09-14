@@ -1,6 +1,6 @@
 import React from "react";
-import { ReactNodeViewRenderer, useEditor } from "@tiptap/react";
-import { mergeAttributes } from "@tiptap/core";
+import { ReactNodeViewRenderer,Editor, useEditor } from "@tiptap/react";
+import { EditorOptions, mergeAttributes } from "@tiptap/core";
 import StarterKit from "@tiptap/starter-kit";
 import DraggableNode from "../custom-node/DraggableNode.js";
 import ArticleNode from "../custom-node/ArticleNode.js";
@@ -9,11 +9,16 @@ import ListItem from "@tiptap/extension-list-item";
 import BulletList from "@tiptap/extension-bullet-list";
 import OrderedList from "@tiptap/extension-ordered-list";
 import UniqueID from "@tiptap/extension-unique-id";
-import ListItemNodeWrapper from "../components/wrappers/ListItemNodeWrapper";
+// @ts-ignore 
+import ListItemNodeWrapper from "../components/wrappers/ListItemNodeWrapper.tsx";
 
-export const EditorContext = React.createContext();
+interface editorProps {
+  children: React.ReactNode;
+}
 
-export const EditorProvider = ({ children }) => {
+export const EditorContext = React.createContext<Editor | null>(null);
+
+export const EditorProvider : React.FC<editorProps> = ({ children }) => {
   const wrappedListItem = ListItem.extend({
     name: "listItem",
     draggable: true,
@@ -61,13 +66,13 @@ export const EditorProvider = ({ children }) => {
     },
   });
 
-  const editor = useEditor({
+  const editor : Editor | null  = useEditor({
     extensions: [
       StarterKit.configure({
         listItem: false,
         bulletList: false,
         orderedList: false,
-      }),
+      } ),
       UniqueID.configure({
         types: ["heading", "paragraph", "listItem"],
       }),
@@ -84,9 +89,9 @@ export const EditorProvider = ({ children }) => {
     autofocus: true,
     // content: `<ArticleItem><div data-type='draggable-item'><p></p></div></ArticleItem>`,
     content: `<div data-type='draggable-item'><p></p></div>`,
-  });
+  } as EditorOptions);
 
   return (
-    <EditorContext.Provider value={editor}>{children}</EditorContext.Provider>
+    <EditorContext.Provider value={editor} > {children} </EditorContext.Provider>
   );
-};
+}

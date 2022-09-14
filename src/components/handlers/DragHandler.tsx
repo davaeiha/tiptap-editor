@@ -1,12 +1,16 @@
 import React,{memo} from 'react';
 import dragIcon from '../../assets/handlers/drag.svg';
 
-const DragHandler = ({hover}) => {
+interface DragHandlerInterface {
+  hover:boolean
+} 
+
+const DragHandler:React.FC<DragHandlerInterface> = ({hover}) => {
   return (
     <div
         className="drag-handle"
         contentEditable="false"
-        suppressContentEditableWarning="false"
+        suppressContentEditableWarning={false}
         draggable="true"
         data-drag-handle
     >

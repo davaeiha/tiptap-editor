@@ -1,18 +1,18 @@
-import React, { useState,useReducer } from 'react';
-import { NodeViewWrapper,NodeViewContent } from '@tiptap/react';
+import React, { useState } from 'react';
+import { NodeViewWrapper,NodeViewContent,NodeViewRendererProps } from '@tiptap/react';
 import DragHandler from '../handlers/DragHandler';
 import PlusHandler from '../handlers/PlusHandler';
 import CloseHandler from '../handlers/CloseHandler';
-
 import viewIcon from '../../assets/handlers/view.svg';
 import VersionHandler from '../handlers/VersionHandler';
-import useVersion from '../../hooks/useVersion';
+//@ts-ignore
+import useVersion from '../../hooks/useVersion.ts';
 
 
-const ArticleNodeWrapper = props => {
+const ArticleNodeWrapper:React.FC<NodeViewRendererProps>= (props) => {
 
-    const [section,setSection] = useState(true);
-    const [hover,setHover] = useState(false);
+    const [section,setSection] = useState<boolean>(true);
+    const [hover,setHover] = useState<boolean>(false);
     const {selectedVersion,dispatch} = useVersion();
 
     return (
@@ -26,7 +26,11 @@ const ArticleNodeWrapper = props => {
             <div className='handler' >
                 <div className="icon-container" style={{display:!hover?"none":"flex"}}>
                     <DragHandler hover={hover}/>
-                    <PlusHandler hover={hover} getPos={props.getPos} node={props.node}/>
+                    <PlusHandler 
+                        hover={hover} 
+                        getPos={props.getPos as ()=>number}
+                        nodeSize={props.node.nodeSize as number}
+                    />
                 </div>
             </div>
             <div className='article'>
@@ -34,7 +38,7 @@ const ArticleNodeWrapper = props => {
                     <div 
                         className="header"
                         contentEditable='false'
-                        suppressContentEditableWarning="false"
+                        suppressContentEditableWarning={false}
                         style={{display:!hover?"none":"flex"}}
                     >
                         <div className='title'>New Article</div>

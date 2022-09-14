@@ -1,9 +1,9 @@
 /* eslint-disable import/no-anonymous-default-export */
-import React,{memo} from "react";
-import { NodeViewContent } from '@tiptap/react';
+import React from "react";
+import { NodeViewContent,NodeViewRendererProps } from '@tiptap/react';
 import NodeWrapper from './NodeWrapper';
 
-const DragNodeWrapper = (props) => {  
+const DragNodeWrapper : React.FC<NodeViewRendererProps> = (props) => {  
   return (
       <NodeWrapper {...props}>
            <NodeViewContent className="content"/>

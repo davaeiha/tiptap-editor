@@ -5,8 +5,11 @@ import h1Icon from '../assets/items/h1.svg';
 import h2Icon from '../assets/items/h2.svg';
 import h3Icon from '../assets/items/h3.svg';
 import articleIcon from '../assets/items/book.svg';
+import { Editor } from '@tiptap/react';
+//@ts-ignore
+import {itemInterface} from '../types/item.ts';
 
-const paragraphHandler = (editor) => {
+const paragraphHandler = (editor:Editor) => {
     if (editor.isActive('bulletList')) {
         editor.commands.toggleBulletList();
     }else if(editor.isActive('orderedList')){
@@ -20,7 +23,7 @@ const paragraphHandler = (editor) => {
     }
 }
 
-const bulletHandler = (editor) => {
+const bulletHandler = (editor:Editor) => {
     if (editor.isActive('heading')) {
         editor
         .chain()
@@ -34,7 +37,7 @@ const bulletHandler = (editor) => {
     }
 }
 
-const orderedHandler = (editor) => {
+const orderedHandler = (editor:Editor) => {
     if (editor.isActive('heading')) {
         editor
         .chain()
@@ -48,7 +51,7 @@ const orderedHandler = (editor) => {
     }
 }
 
-const headingHandler = (editor,level) => {
+const headingHandler = (editor:Editor,level:number) => {
     if (editor.isActive('bulletList')) {
         editor.commands.toggleBulletList();
     }else if(editor.isActive('orderedList')){
@@ -60,7 +63,7 @@ const headingHandler = (editor,level) => {
     .toggleHeading({level})
 }
 
-const articleHandler = (editor) => {
+const articleHandler = (editor:Editor) => {
     editor
     .chain()
     .selectParentNode()
@@ -69,7 +72,8 @@ const articleHandler = (editor) => {
     .run();
 }
 
-const items=[
+
+const items:itemInterface[]=[
     {
         id:1,
         name:"Paragraph",

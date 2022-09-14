@@ -1,6 +1,6 @@
 import { mergeAttributes, Node } from "@tiptap/core";
 import { ReactNodeViewRenderer } from "@tiptap/react";
-import DivNodeWrapper from "../components/wrappers/DragNodeWrapper";
+import DivNodeWrapper from "../components/wrappers/DragNodeWrapper.tsx";
 
 export default Node.create({
   name: "draggableItem",

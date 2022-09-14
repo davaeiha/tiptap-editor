@@ -1,9 +1,17 @@
-import React, { useContext } from 'react'
-import { EditorContext } from '../../contexts/EditorContext';
+import React, { useContext } from 'react';
+//@ts-ignore
+import { EditorContext } from '../../contexts/EditorContext.tsx';
 import menuIcon from '../../assets/handlers/three-dots.svg';
+import { Editor } from '@tiptap/react';
 
-const MenuHandler = ({menu,setMenu,pos}) => {
-    const editor = useContext(EditorContext);
+interface MenuHandlerInterface {
+    menu:boolean,
+    setMenu:Function,
+    pos:() => number
+} 
+
+const MenuHandler : React.FC<MenuHandlerInterface> = ({menu,setMenu,pos}) => {
+    const editor : Editor = useContext(EditorContext);
 
     const menuHandler = () => {
         
@@ -20,7 +28,7 @@ const MenuHandler = ({menu,setMenu,pos}) => {
         <div
             className='menu-icon'
             contentEditable='false'
-            suppressContentEditableWarning="false"
+            suppressContentEditableWarning={false}
             draggable="true"
             onClick={menuHandler}
         >

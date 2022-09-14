@@ -1,5 +1,6 @@
 import React from "react";
-import Editor from "./components/Editor";
+// @ts-ignore 
+import Editor from "./components/Editor.tsx";
 
 function App() {
 

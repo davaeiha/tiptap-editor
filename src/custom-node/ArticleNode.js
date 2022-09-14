@@ -1,6 +1,6 @@
 import { mergeAttributes, Node } from "@tiptap/core";
 import { ReactNodeViewRenderer } from "@tiptap/react";
-import ArticleNodeWrapper from "../components/wrappers/ArticleNodeWrapper";
+import ArticleNodeWrapper from "../components/wrappers/ArticleNodeWrapper.tsx";
 
 export default Node.create({
   name: "ArticleItem",

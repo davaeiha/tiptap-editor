@@ -1,13 +1,21 @@
-import React, { useContext, useEffect, useRef, useState, memo } from 'react';
+import { Editor } from '@tiptap/react';
+import React, { useContext, useRef, useState, memo } from 'react';
 import plusIcon from '../../assets/handlers/plus.svg';
-import { EditorContext } from '../../contexts/EditorContext';
+//@ts-ignore
+import { EditorContext } from '../../contexts/EditorContext.tsx';
 import MenuItem from '../menu/MenuItem';
 
-const PlusHandler = ({nodeSize,getPos,hover}) => {
+interface PlusHandlerInterface {
+    nodeSize:number,
+    getPos:()=>number,
+    hover:boolean
+}
 
-    const [menu,setMenu] = useState(false); 
+const PlusHandler : React.FC<PlusHandlerInterface> = ({nodeSize,getPos,hover}) => {
 
-    const editor = useContext(EditorContext);
+    const [menu,setMenu] = useState<boolean>(false); 
+
+    const editor:Editor = useContext(EditorContext);
 
     const addSectionHandler =() => {
 
@@ -24,7 +32,7 @@ const PlusHandler = ({nodeSize,getPos,hover}) => {
         <div 
             className='plus-handle'
             contentEditable="false"
-            suppressContentEditableWarning="false"
+            suppressContentEditableWarning={false}
             
             ref={menuRef}
         >
