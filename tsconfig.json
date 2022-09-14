@@ -103,8 +103,8 @@
 
     /* Completeness */
     // "skipDefaultLibCheck": true,                      /* Skip type checking .d.ts files that are included with TypeScript. */
-    "skipLibCheck": true,       
-    "include": ["src/components", "src/custom.d.ts"]                          /* Skip type checking all .d.ts files. */
+    "skipLibCheck": true       
+    // "include": ["src/components", "src/custom.d.ts"]                          /* Skip type checking all .d.ts files. */
   },
   "include": ["**/*.ts", "**/*.tsx","src/**/*"],
   "exclude": ["node_modules","build"]
