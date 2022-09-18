@@ -1,12 +1,9 @@
 import React, { useState } from 'react';
 import { NodeViewWrapper,NodeViewContent,NodeViewRendererProps } from '@tiptap/react';
-import DragHandler from '../handlers/DragHandler';
-import PlusHandler from '../handlers/PlusHandler';
-import CloseHandler from '../handlers/CloseHandler';
-import viewIcon from '../../assets/handlers/view.svg';
-import VersionHandler from '../handlers/VersionHandler';
 //@ts-ignore
 import useVersion from '../../hooks/useVersion.ts';
+import ArticleHeaderHandler from '../handlers/ArticleHeaderHandler';
+import ArticleSideHandler from '../handlers/ArticleSideHandler';
 
 
 const ArticleNodeWrapper:React.FC<NodeViewRendererProps>= (props) => {
@@ -23,34 +20,18 @@ const ArticleNodeWrapper:React.FC<NodeViewRendererProps>= (props) => {
                 onMouseOver={()=>setHover(true)}
                 onMouseOut={()=>setHover(false)}
             >
-            <div className='handler' >
-                <div className="icon-container" style={{display:!hover?"none":"flex"}}>
-                    <DragHandler hover={hover}/>
-                    <PlusHandler 
-                        hover={hover} 
-                        getPos={props.getPos as ()=>number}
-                        nodeSize={props.node.nodeSize as number}
-                    />
-                </div>
-            </div>
+            <ArticleSideHandler 
+                hover={hover} 
+                getPos={props.getPos} 
+                nodeSize={props.node.nodeSize} 
+            />
             <div className='article'>
-                <div className="header-container">
-                    <div 
-                        className="header"
-                        contentEditable='false'
-                        suppressContentEditableWarning={false}
-                        style={{display:!hover?"none":"flex"}}
-                    >
-                        <div className='title'>New Article</div>
-                        <div className="article-handler">
-                            <VersionHandler selectedVersion={selectedVersion} dispatch={dispatch}/>
-                            <div className='open-close'>
-                                <img src={viewIcon} alt="open" />
-                                <CloseHandler setSection={setSection}/>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <ArticleHeaderHandler
+                    hover={hover} 
+                    setSection={setSection} 
+                    dispatch={dispatch} 
+                    selectedVersion={selectedVersion}
+                />
                 <NodeViewContent className="content" >
                     {selectedVersion.value}
                 </NodeViewContent>

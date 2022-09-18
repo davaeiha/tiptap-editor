@@ -1,0 +1,27 @@
+.draggable-item {
+    display: flex;
+    border-radius: 0.5rem;
+    .handle-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 2rem;
+        .vertical-line {
+            height: 100%;
+            margin: 0 14px 6px 0;
+            background-image: linear-gradient(black 33%, rgba(255,255,255,0) 0%);
+            background-position: right;
+            background-size: 5px 5px;
+            background-repeat: repeat-y;
+        }
+    }
+    
+    .content {
+        @include content;
+    }
+
+    .list-item {
+        flex: 1 1 auto;
+        margin-left: 1rem;
+    }
+}

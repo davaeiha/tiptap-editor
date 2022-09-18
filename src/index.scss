@@ -1,24 +1,23 @@
 body {
     margin: 0 auto;
-    font-family: roboto;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-  
-code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-        monospace;  
-}
-  
-:root {
-    --bg:  #ffffff;
-    --bg-accent: #cad5e5;
-    --text-color: #000000;
-    --border: 1px solid #474a4d;
-    --border-radius: 8px;
 }
 
-@import './components/wrappers/NodeWrapper.scss';
-@import './components/wrappers/ArticleNodeWrapper.scss';
-@import './components/menu/Dropdown.scss';
-@import './components/Editor.scss';
+@import './styles/variables';
+@import './styles/mixins';
+@import './styles/parents';
+
+@import './styles/handlers/PlusHandler.scss';
+@import './styles/handlers/DragHandler.scss';
+@import './styles/handlers/VersionHandler.scss';
+@import './styles/handlers/MenuHandler.scss';
+@import './styles/handlers/CloseHandler.scss';
+@import './styles/handlers/ArticleHeaderHandler.scss';
+
+@import './styles/menu/Item.scss';
+@import './styles/menu/MenuItem.scss';
+@import './styles/menu/Dropdown.scss';
+
+@import './styles/wrappers/NodeWrapper.scss';
+@import './styles/wrappers/ArticleNodeWrapper.scss';
+
+@import './styles/Editor.scss';

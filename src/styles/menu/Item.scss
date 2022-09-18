@@ -1,0 +1,22 @@
+.item {
+    height: 50px;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    border: none;
+    background: transparent;
+    font-size: 0.85rem;
+    color: $textColor;
+    font-weight: 500;
+    padding: 0 0.2rem;
+    opacity: 0.6;
+    cursor: pointer;
+    &:hover,
+    &.is-active {
+    opacity: 1;
+    }
+    .item-icon {
+        width: 30px;
+        height: 30px;
+    }
+}

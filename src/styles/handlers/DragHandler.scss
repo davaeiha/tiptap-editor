@@ -1,0 +1,8 @@
+.drag-handle {
+    display: flex;
+    justify-content: center;
+    img {
+        width: 30px;
+        cursor: grab;
+    }
+}

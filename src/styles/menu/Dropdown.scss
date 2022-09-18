@@ -1,0 +1,17 @@
+.menu {
+    position: relative;
+    .menu-container {
+        display: flex;
+        flex-direction: column;
+        .icon-container{
+            display: flex;
+            width: 2rem;
+            justify-content: center;
+            align-self: center;
+            gap: 0.25rem;
+            position: absolute;
+            right: 5px;
+            top: 10px;
+        }
+    }
+}

@@ -26,14 +26,13 @@ const PlusHandler : React.FC<PlusHandlerInterface> = ({nodeSize,getPos,hover}) =
         setMenu(true)
     }
 
-    const menuRef = useRef(null);
+    const menuRef : React.RefObject<HTMLDivElement>= useRef(null);
 
     return (
         <div 
             className='plus-handle'
             contentEditable="false"
             suppressContentEditableWarning={false}
-            
             ref={menuRef}
         >
             <img 

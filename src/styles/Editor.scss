@@ -1,8 +1,8 @@
 .editor {
   max-width: 80%;
   margin: 0 auto;
-  border: var(--border);
-  border-radius: var(--border-radius);
+  border: 1px solid $borderColor;
+  border-radius: $borderRadius;
   margin-top: 1rem;
   
   .ProseMirror {

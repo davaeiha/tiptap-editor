@@ -1,0 +1,15 @@
+%base-dropdown {
+    position: absolute;
+    top: 10px;
+    width: 150px !important;
+    background-color: $backgroundColor;
+    border: 1px solid $borderColor;
+    border-radius: $borderRadius;
+    padding: 1rem;
+    box-shadow:  5px 10px 8px 1px $shadowColor;
+    overflow: hidden;
+    z-index: 10;
+    .container {
+        width: 100%;
+    }   
+}

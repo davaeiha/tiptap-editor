@@ -15,7 +15,6 @@ const DropdownMenu : React.FC<DropdownInterface> = ({hover,setSection,pos}) => {
     const menuRef : React.RefObject<HTMLDivElement> = useRef(null);
     
     return (
-        <div className="dropdown">
             <div className='menu'>
                 <div className='menu-container' tabIndex={1} ref={menuRef}>
                     <div className="icon-container" style={{display:!hover ? "none" : "flex"}}>
@@ -25,7 +24,6 @@ const DropdownMenu : React.FC<DropdownInterface> = ({hover,setSection,pos}) => {
                     { menu && <MenuItem menu={menu} menuRef={menuRef} setMenu={setMenu}/>}
                 </div>
             </div>
-        </div>
     );
 }
 

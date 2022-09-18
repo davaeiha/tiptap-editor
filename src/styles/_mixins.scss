@@ -1,0 +1,35 @@
+@mixin item {
+    
+}
+
+@mixin dropdown($right) {
+    position: absolute;
+    top: 10px;
+    right: $right;
+    width: 150px !important;
+    background-color: $backgroundColor;
+    border: 1px solid $borderColor;
+    border-radius: $borderRadius;
+    padding: 1rem;
+    box-shadow:  5px 10px 8px 1px $shadowColor;
+    overflow: hidden;
+    z-index:10;
+    .container {
+        width: 100%;
+    }   
+}
+
+@mixin content {
+    word-break: break-all;
+    width: 100%;
+    div {
+        p,h1,h2,h3 {
+            margin: 0;
+            padding: 0.5rem 2rem 0 0;
+        }
+        ul,ol{
+            padding: 0;
+            margin: 0;
+        }
+    } 
+}

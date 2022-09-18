@@ -56,8 +56,6 @@ export default (props : nodeWrapperProps) => {
             }
             </div>
           }
-          
-
           {props.children}
           {
             (firstChild === 'bulletList'||firstChild === 'orderedList') ||

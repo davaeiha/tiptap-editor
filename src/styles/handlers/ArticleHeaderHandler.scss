@@ -1,0 +1,30 @@
+.header-container{
+    width: 100%;
+    height: 2rem;
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.2rem 0;
+        background-color: rgb(84, 129, 243);
+        border-radius: 0 0.5rem 0 0;
+        .title {
+            font-weight: bold;
+            margin-left: 0.5rem;
+        }
+        .article-handler{
+            display: flex;
+            gap: 1rem;
+            .open-close {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 0.5rem;
+                img {
+                    width: 20px;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
