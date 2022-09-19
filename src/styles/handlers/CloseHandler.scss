@@ -1,6 +1,7 @@
-.delete-icon > img{
-    width: 20px;
-    height: 20px;
+.delete-icon {
+    color: $iconColor;
     cursor: pointer;
-    z-index: 1;
+    i{
+        z-index: 1;
+    }
 }

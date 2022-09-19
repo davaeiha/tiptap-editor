@@ -29,8 +29,12 @@ const Item : React.FC<itemInterface> = ({activation,icon,name,onClick,setMenu}) 
                     ? 'is-active item' : 'item'
                 }
         >
-            <img src={icon} alt={name} className="item-icon" />
-            {name}
+            <div className="item-icon">
+                <i className={icon}></i>
+            </div>
+            <span className='item-name'>
+                {name}
+            </span>
         </div>
   )
 }

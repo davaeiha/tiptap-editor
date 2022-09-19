@@ -1,15 +1,18 @@
 .header-container{
     width: 100%;
-    height: 2rem;
+    height: 1rem;
     .header {
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 0.2rem 0;
-        background-color: rgb(84, 129, 243);
-        border-radius: 0 0.5rem 0 0;
+        height: 0.5rem;
+        background-color: $articleHeaderColor;
+        border-radius: 0 $borderRadius 0 0;
         .title {
             font-weight: bold;
+            font-size: 0.75rem;
+            color: $articleDarkSideColor;
             margin-left: 0.5rem;
         }
         .article-handler{
@@ -18,12 +21,8 @@
             .open-close {
                 display: flex;
                 justify-content: center;
-                align-items: center;
-                gap: 0.5rem;
-                img {
-                    width: 20px;
-                    cursor: pointer;
-                }
+                align-items: center;    
+                margin-right: 0.5rem;
             }
         }
     }

@@ -2,12 +2,17 @@
     display: flex;
     justify-content: center;
     position: relative;
-    img {
+    color: $iconColor;
+    .plus {
         width: 15px;
-        padding-bottom:0.5rem ;
+        display: flex;
+        justify-content: center;
+        justify-items: center;
+        margin-bottom: 0.5rem;
         cursor: pointer;
     }
     .dropdown {
-        @include dropdown(20px);
+        @extend %base-dropdown;
+        right: 20px;
     }
 }

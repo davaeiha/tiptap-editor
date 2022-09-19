@@ -1,16 +1,16 @@
 import React, { useEffect } from "react";
 
 
-const useMenu = (
-    menu:boolean,
-    setMenu:Function,
-    menuRef:React.RefObject<HTMLDivElement>
+const useBlur = (
+    blur:boolean,
+    setBlur:Function,
+    blurRef:React.RefObject<HTMLDivElement>
     ) =>{
     useEffect(() => {
 
         const checkIfClickedOutside : any = (e : React.MouseEvent<HTMLElement>) => {
-            if (menu && menuRef.current && !menuRef.current.contains(e.target as Element)) {
-                setMenu(false);
+            if (blur && blurRef.current && !blurRef.current.contains(e.target as Element)) {
+                setBlur(false);
             }
         }
 
@@ -19,7 +19,7 @@ const useMenu = (
         return () => {
             document.removeEventListener("mousedown", checkIfClickedOutside);
         }
-    }, [menu]);
+    }, [blur]);
 }
 
-export default useMenu;
+export default useBlur;

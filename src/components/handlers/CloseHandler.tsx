@@ -1,5 +1,4 @@
 import React from 'react';
-import closeIcon from '../../assets/handlers/close.svg';
 
 interface CloseHandlerInterface {  
     setSection:(section:boolean)=>void  
@@ -14,7 +13,7 @@ const CloseHandler:React.FC<CloseHandlerInterface> = ({setSection})=> {
             draggable="true"
             onClick={()=>setSection(false)}
         >
-            <img src={closeIcon} alt="close" />
+            <i className="fa-solid fa-xmark fa-2xs"></i>
         </div>
   )
 }

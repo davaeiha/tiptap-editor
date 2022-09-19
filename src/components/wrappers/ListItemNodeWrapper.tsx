@@ -14,4 +14,4 @@ const ListItemNodeWrapper : React.FC<NodeViewRendererProps> = (props) => {
   )
 }
 
-export  default ListItemNodeWrapper;
+export default ListItemNodeWrapper;

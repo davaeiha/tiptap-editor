@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
+import { Editor } from '@tiptap/react';
 //@ts-ignore
 import { EditorContext } from '../../contexts/EditorContext.tsx';
-import menuIcon from '../../assets/handlers/three-dots.svg';
-import { Editor } from '@tiptap/react';
+
 
 interface MenuHandlerInterface {
     menu:boolean,
@@ -32,7 +32,7 @@ const MenuHandler : React.FC<MenuHandlerInterface> = ({menu,setMenu,pos}) => {
             draggable="true"
             onClick={menuHandler}
         >
-            <img src={menuIcon} alt="menu" />
+            <i className="fa-solid fa-ellipsis-vertical fa-2xs"></i>
         </div>
     )
 }

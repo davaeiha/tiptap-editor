@@ -29,4 +29,3 @@ const DropdownMenu : React.FC<DropdownInterface> = ({hover,setSection,pos}) => {
 
 
 export default memo(DropdownMenu);
-// export default DropdownMenu;

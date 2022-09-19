@@ -4,6 +4,6 @@ export interface itemInterface {
     id:number;
     name:string;
     activation:string | Array<string | number>,
-    icon:string,
+    icon :string,
     onClick:(editor:Editor,level?: number)=> void
 }

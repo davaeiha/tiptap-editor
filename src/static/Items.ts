@@ -1,10 +1,3 @@
-import paragraphIcon from '../assets/items/paragraph.svg';
-import bulletIcon from '../assets/items/bullet.svg';
-import numberedIcon from '../assets/items/numbered.svg';
-import h1Icon from '../assets/items/h1.svg';
-import h2Icon from '../assets/items/h2.svg';
-import h3Icon from '../assets/items/h3.svg';
-import articleIcon from '../assets/items/book.svg';
 import { Editor } from '@tiptap/react';
 //@ts-ignore
 import {itemInterface} from '../types/item.ts';
@@ -78,49 +71,49 @@ const items:itemInterface[]=[
         id:1,
         name:"Paragraph",
         activation:"paragraph",
-        icon:paragraphIcon,
+        icon:"fa-solid fa-paragraph",
         onClick:paragraphHandler,
     },
     {
         id:2,
         name:"Bullet List",
         activation:"bulletList",
-        icon:bulletIcon,
+        icon:"fa-regular fa-list",
         onClick:bulletHandler,
     },
     {
         id:3,
         name:"Ordered List",
         activation:"orderedList",
-        icon:numberedIcon,
+        icon:"fa-light fa-list-ol",
         onClick:orderedHandler,
     },
     {
         id:4,
         name:"Heading 1",
         activation:["heading",1],
-        icon:h1Icon,
+        icon:"fa-solid fa-h1",
         onClick:headingHandler,
     },
     {
         id:5,
         name:"Heading 2",
         activation:["heading",2],
-        icon:h2Icon,
+        icon:"fa-solid fa-h2",
         onClick:headingHandler,
     },
     {
         id:6,
         name:"Heading 3",
         activation:["heading",3],
-        icon:h3Icon,
+        icon:"fa-solid fa-h3",
         onClick:headingHandler,
     },
     {
         id:7,
         name:"Article",
         activation:"article",
-        icon:articleIcon,
+        icon:"fa-sharp fa-solid fa-book-open",
         onClick:articleHandler
     }
 ]

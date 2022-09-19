@@ -1,8 +1,7 @@
 .drag-handle {
     display: flex;
     justify-content: center;
-    img {
-        width: 30px;
-        cursor: grab;
-    }
+    margin-top: 0.5rem;
+    color: $iconColor;
+    cursor: grab;
 }

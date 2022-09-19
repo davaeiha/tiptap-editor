@@ -1,11 +1,12 @@
 import React,{memo} from 'react';
-import dragIcon from '../../assets/handlers/drag.svg';
+// import dragIcon from '../../assets/handlers/drag.svg';
 
 interface DragHandlerInterface {
-  hover:boolean
+  hover : boolean
+  article ?: boolean
 } 
 
-const DragHandler:React.FC<DragHandlerInterface> = ({hover}) => {
+const DragHandler:React.FC<DragHandlerInterface> = ({hover,article}) => {
   return (
     <div
         className="drag-handle"
@@ -13,8 +14,12 @@ const DragHandler:React.FC<DragHandlerInterface> = ({hover}) => {
         suppressContentEditableWarning={false}
         draggable="true"
         data-drag-handle
+        style={{
+          display:!hover ?"none":"flex",
+          color : article ? '#ffffff' : 'inherit' 
+        }}
     >
-        <img src={dragIcon} alt="drag" style={{display:!hover?"none":"flex"}} />
+      <i className="fa-regular fa-grip-lines fa-2xs"></i>
     </div>
   )
 }

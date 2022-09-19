@@ -1,25 +1,14 @@
 .article-item {
     display: flex;
-    .handler{
-        width: 1.5rem;
-        .icon-container{
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            background-color: rgb(138, 167, 220);
-            border-radius: 0.5rem 0 0 0.5rem;
-            height: 100%;
-        }
-    }
-
     .article {
         display: flex;
         flex-direction: column;
         justify-content: center;
         width: 100%;
         
-        .content {
+        >.content {
             @include content;
+            border-left:0.25px solid $borderColor;
         }
     }
 }

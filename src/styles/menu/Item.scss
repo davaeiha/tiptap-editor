@@ -1,22 +1,25 @@
 .item {
-    height: 50px;
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+    height: 25px;
     display: flex;
     gap: 1rem;
     align-items: center;
     border: none;
     background: transparent;
     font-size: 0.85rem;
-    color: $textColor;
+    color: $iconColor;
     font-weight: 500;
-    padding: 0 0.2rem;
-    opacity: 0.6;
+    padding: 0.25rem 0 0.25rem 3rem;
+    opacity: 0.7;
     cursor: pointer;
-    &:hover,
-    &.is-active {
-    opacity: 1;
+    &:hover{
+        opacity: 1;
+        background-color: #f5f7f9;
     }
-    .item-icon {
-        width: 30px;
-        height: 30px;
+    &.is-active {
+        opacity: 1;
     }
 }

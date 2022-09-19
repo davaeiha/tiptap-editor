@@ -1,11 +1,11 @@
 .handler{
-    width: 1.5rem;
+    width: 1.2rem !important;
     .icon-container{
         display: flex;
         flex-direction: column;
+        background-color: $articleDarkSideColor;
         justify-content: space-between;
-        background-color: rgb(138, 167, 220);
-        border-radius: 0.5rem 0 0 0.5rem;
+        border-radius: $borderRadius 0 0 $borderRadius;
         height: 100%;
     }
 }

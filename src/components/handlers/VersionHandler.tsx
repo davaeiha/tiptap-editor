@@ -1,20 +1,28 @@
 import React from 'react';
-import nextIcon from '../../assets/handlers/next.svg';
-import perviousIcon from '../../assets/handlers/previous.svg';
-import plusIcon from '../../assets/handlers/plus.svg';
 // @ts-ignore
 import {versionHookType,typeEnum} from '../../types/version.ts';
 
+type VersionHandlerType = {
+    hover:boolean,
+} & versionHookType;
 
-const VersionHandler : React.FC<versionHookType> = ({dispatch,selectedVersion}) => {
+const VersionHandler : React.FC<VersionHandlerType> = ({dispatch,selectedVersion,hover}) => {
     return (
         <div className='version'>
-            <p>{selectedVersion.name}</p>
-            <div className='icons'>
-                <img onClick={()=>dispatch({type:typeEnum.PERVIOUS})} src={perviousIcon} alt="previous" />
-                <img src={plusIcon} alt="new" />
-                <img onClick={()=>dispatch({type:typeEnum.NEXT})} src={nextIcon} alt="next" />
+            <span className='version-name'>{selectedVersion.name}</span>
+            {
+                hover && <div className='version-icons'>
+                <div className="icon" onClick={()=>dispatch({type:typeEnum.PERVIOUS})}>
+                    <i className="fa-solid fa-backward-step fa-2xs"></i>
+                </div>
+                <div className="icon">
+                    <i className="fa-solid fa-plus fa-2xs"></i>
+                </div>
+                <div className="icon" onClick={()=>dispatch({type:typeEnum.NEXT})}>
+                    <i className="fa-solid fa-forward-step fa-2xs"></i>
+                </div>
             </div>
+            }
         </div>
     )
 }
