@@ -2,21 +2,8 @@ import  {useReducer} from 'react';
 // @ts-ignore
 import {versionHookType,versionType,typeEnum,actionType} from '../types/version.ts';
 
-const useVersion = () : versionHookType => {
-    const versions:Array<versionType> = [
-        {
-            name: 'version 1 name',
-            value:'version 1 text'
-        },
-        {
-            name: 'version 2 name',
-            value:'version 2 text'
-        },
-        {
-            name: 'version 3 name',
-            value:'version 3 text'
-        }
-    ];
+const useVersion = (versions:Array<versionType>) : versionHookType => {
+    
 
     const initialVersion : versionType = versions[0];
 

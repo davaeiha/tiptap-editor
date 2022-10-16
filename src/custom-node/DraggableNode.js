@@ -3,7 +3,7 @@ import { ReactNodeViewRenderer } from "@tiptap/react";
 import DivNodeWrapper from "../components/wrappers/DragNodeWrapper.tsx";
 
 export default Node.create({
-  name: "draggableItem",
+  name: "DraggableItem",
 
   group: "block list heading",
 
@@ -16,7 +16,7 @@ export default Node.create({
       Tab: () => {
         this.editor.commands.selectTextblockStart();
         this.editor.commands.joinBackward();
-        return this.editor.commands.wrapIn("draggableItem");
+        return this.editor.commands.wrapIn("DraggableItem");
       },
       Enter: () => {
         if (
@@ -26,7 +26,7 @@ export default Node.create({
           this.editor.commands.splitBlock();
           this.editor.commands.liftEmptyBlock();
           return this.editor.commands.insertContent(
-            `<draggableItem><p data-type="paragraph"></p></draggableItem>`
+            `<DraggableItem><p data-type="paragraph"></p></DraggableItem>`
           );
         }
       },
@@ -39,7 +39,7 @@ export default Node.create({
         tag: 'div[data-type="draggable-item"]',
       },
       {
-        tag: "draggableItem",
+        tag: "DraggableItem",
       },
     ];
   },

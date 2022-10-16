@@ -21,12 +21,12 @@ const bulletHandler = (editor:Editor | any) => {
         editor
         .chain()
         .setParagraph()
-        .toggleBulletList()
+        .toggleList('bulletList','bulletedListItem')
         .run();
     }else{
         editor
         .commands
-        .toggleBulletList() 
+        .toggleList('bulletList','bulletedListItem')
     }
 }
 
@@ -35,20 +35,20 @@ const orderedHandler = (editor:Editor | any) => {
         editor
         .chain()
         .setParagraph()
-        .toggleOrderedList()
+        .toggleList('orderedList','orderedListItem')
         .run();
     }else{
         editor
         .commands
-        .toggleOrderedList();
+        .toggleList('orderedList','orderedListItem')
     }
 }
 
 const headingHandler = (editor:Editor | any,level:number) => {
     if (editor.isActive('bulletList')) {
-        editor.commands.toggleBulletList();
+        editor.commands.toggleList('bulletList','bulletedListItem');
     }else if(editor.isActive('orderedList')){
-        editor.commands.toggleOrderedList();
+        editor.commands.toggleList('orderedList','orderedListItem');
     }
 
     editor
