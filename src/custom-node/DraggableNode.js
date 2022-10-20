@@ -1,5 +1,6 @@
 import { mergeAttributes, Node } from "@tiptap/core";
 import { ReactNodeViewRenderer } from "@tiptap/react";
+import ReactDOMServer from 'react-dom/server'
 import DivNodeWrapper from "../components/wrappers/DragNodeWrapper.tsx";
 
 export default Node.create({
@@ -44,18 +45,31 @@ export default Node.create({
     ];
   },
 
-  renderHTML({ HTMLAttributes }) {
+  renderHTML(props) {
+    // const componentHTML = ReactDOMServer.renderToStaticMarkup(
+    //   <DivNodeWrapper
+    //     node={{ attrs: HTMLAttributes }}
+    //   />
+    // );
+    // console.log(props.HTMLAttributes)
+   
     return [
       "div",
-      mergeAttributes(HTMLAttributes, {
+      mergeAttributes(props.HTMLAttributes, {
         "data-type": "draggable-item",
         draggable: "true",
       }),
-      0,
+      0
     ];
+    // return [
+    //   'div',
+    //   mergeAttributes(props.HTMLAttributes)
+    // ]
   },
 
-  addNodeView() {
+  addNodeView(props) {
+    // console.log(props)
+
     return ReactNodeViewRenderer(DivNodeWrapper);
   },
 });

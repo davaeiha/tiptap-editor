@@ -6,10 +6,10 @@ type VersionHandlerType = {
     hover:boolean,
 } & versionHookType;
 
-const VersionHandler : React.FC<VersionHandlerType> = ({dispatch,selectedVersion,hover}) => {
+const VersionHandler : React.FC<VersionHandlerType> = ({dispatch,selectedVersionName,hover}) => {
     return (
         <div className='version'>
-            <span className='version-name'>{selectedVersion.name}</span>
+            <span className='version-name'>{selectedVersionName}</span>
             {
                 hover && <div className='version-icons'>
                 <div className="icon" onClick={()=>dispatch({type:typeEnum.PERVIOUS})}>

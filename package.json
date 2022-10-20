@@ -25,6 +25,7 @@
     "@tiptap/extension-paragraph": "^2.0.0-beta.199",
     "@tiptap/extension-text": "^2.0.0-beta.199",
     "@tiptap/extension-unique-id": "^2.0.0-beta.4",
+    "@tiptap/html": "^2.0.0-beta.199",
     "@tiptap/react": "^2.0.0-beta.114",
     "@types/jest": "^29.0.2",
     "@types/node": "^18.7.18",

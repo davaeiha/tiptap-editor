@@ -94,12 +94,12 @@ export interface ContentItem {
     type2: content_type2;
     media ?: Media[] | null;
     name_key ?: string | null;
-    name ?: Name[] | null;
+    names ?: Name[] | null;
     __typename ?: string | null;
 }
 
 export interface NestedContentItem extends ContentItem {
-    children ?: NestedContentItem[] ;
+    children ?: NestedContentItem[];
 }
 
 export interface ContentTree{

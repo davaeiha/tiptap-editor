@@ -14,7 +14,7 @@ const ArticleHeaderHandler = ({
     hover,
     focus,
     setSection,
-    selectedVersion,
+    selectedVersionName,
     dispatch
 }:ArticleHeaderHandler) => {
   return (
@@ -30,7 +30,7 @@ const ArticleHeaderHandler = ({
             <div className='title' style={{color:(!hover && focus) ? "#3385ff":"#05f"}}>New Article</div>
             
                 <div className="article-handler">
-                    <VersionHandler hover={hover} selectedVersion={selectedVersion} dispatch={dispatch}/>
+                    <VersionHandler hover={hover} selectedVersionName={selectedVersionName} dispatch={dispatch}/>
                     {
                         hover && <>
                             <div className='open-close'>

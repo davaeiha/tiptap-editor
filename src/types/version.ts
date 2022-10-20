@@ -6,9 +6,10 @@ export enum typeEnum {
 export interface actionType {
     type: typeEnum;
 }
+
 export interface versionType {
+    id:string;
     name:string;
-    value:string;
 }
 
 export interface versionHookType {
