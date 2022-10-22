@@ -59,7 +59,6 @@ function App() {
       } as ContentTree)
     }
   },[contentTree]);
-  
 
   if (loading && versionState.loading) return 'Loading...';
   
