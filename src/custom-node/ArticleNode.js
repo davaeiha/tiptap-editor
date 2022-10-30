@@ -49,7 +49,7 @@ export default Node.create({
 
   addStorage(){
     return {
-      awesomeness: 100,
+      selectedVersion: null,
     }
   }
 });

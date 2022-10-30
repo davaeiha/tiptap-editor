@@ -40,26 +40,36 @@ export const makeTree = (items:ContentItem[],root:string): NestedContentItem[] =
 export const makeContent = (dataTree:NestedContentItem[]):ContentTree[] => {
     const contentBody : ContentTree[]= []
     const bulletBody : ContentTree = {
-        type:'bulletList',
-        content:[]
+        type:'DraggableItem',
+        content:[
+            {
+                type:'bulletList',
+                content:[]
+            }
+        ]
     }
     const orderedBody : ContentTree = {
-        type:'orderedList',
-        content:[]
+        type:'DraggableItem',
+        content:[
+            {
+                type:'orderedList',
+                content:[]
+            }
+        ]
     }
     
     const pushList = ():void =>{
 
-        if(orderedBody.content!.length>0){
-            const shallowClonedOrderedBody = {...orderedBody};
-            contentBody.push(shallowClonedOrderedBody);
-            orderedBody.content=[]
+        if(orderedBody.content![0].content!.length>0){
+            const deepClonedOrderedBody = structuredClone(orderedBody)
+            contentBody.push(deepClonedOrderedBody);
+            orderedBody.content![0].content=[]
         } 
     
-        if(bulletBody.content!.length>0){
-            const shallowClonedBulletBody = {...bulletBody};
-            contentBody.push(shallowClonedBulletBody);
-            bulletBody.content=[]
+        if(bulletBody.content![0].content!.length>0){
+            const deepClonedBulletBody = structuredClone(bulletBody);
+            contentBody.push(deepClonedBulletBody);
+            bulletBody.content![0].content=[]
         } 
     }
    
@@ -68,6 +78,11 @@ export const makeContent = (dataTree:NestedContentItem[]):ContentTree[] => {
         case 'paragraph_item':
           const paragraphContent:ContentTree= {
             type:'DraggableItem',
+            attrs:{
+                id:branch.id,
+                parent_id:branch.parent_id,
+                parent_item_id:branch.parent_item_id
+            },
             content:[
               {
                 type:'paragraph',
@@ -115,19 +130,24 @@ export const makeContent = (dataTree:NestedContentItem[]):ContentTree[] => {
            
             contentBody.push({
                 type:'DraggableItem',
+                attrs:{
+                    id:branch.id,
+                    parent_id:branch.parent_id,
+                    parent_item_id:branch.parent_item_id
+                },
                 content:[
-                {
-                    type:'heading',
-                    attrs:{
-                    level:1,
-                    },
-                    content:[
                     {
-                        type:'text',
-                        text:branch.raw_value || " "
+                        type:'heading',
+                        attrs:{
+                            level:1,
+                        },
+                        content:[
+                        {
+                            type:'text',
+                            text:branch.raw_value || " "
+                        }
+                        ]
                     }
-                    ]
-                }
                 ]
             } as ContentTree) 
             break;
@@ -135,6 +155,11 @@ export const makeContent = (dataTree:NestedContentItem[]):ContentTree[] => {
             pushList();
             contentBody.push({
                 type:'DraggableItem',
+                attrs:{
+                    id:branch.id,
+                    parent_id:branch.parent_id,
+                    parent_item_id:branch.parent_item_id
+                },
                 content:[
                 {
                     type:'heading',
@@ -155,6 +180,11 @@ export const makeContent = (dataTree:NestedContentItem[]):ContentTree[] => {
             pushList();
             contentBody.push({
                 type:'DraggableItem',
+                attrs:{
+                    id:branch.id,
+                    parent_id:branch.parent_id,
+                    parent_item_id:branch.parent_item_id
+                },
                 content:[
                 {
                     type:'heading',
@@ -174,6 +204,11 @@ export const makeContent = (dataTree:NestedContentItem[]):ContentTree[] => {
         case 'bulleted_item':
             const bulletListItem : ContentTree = {
                 type:'bulletedListItem',
+                attrs:{
+                    id:branch.id,
+                    parent_id:branch.parent_id,
+                    parent_item_id:branch.parent_item_id
+                },
                 content:[
                     {
                         type:'paragraph',
@@ -193,12 +228,17 @@ export const makeContent = (dataTree:NestedContentItem[]):ContentTree[] => {
                 })
             }
 
-            bulletBody.content!.push(bulletListItem);
+            bulletBody.content![0].content!.push(bulletListItem);
             // console.log(bulletBody);
           break;
         case 'numbered_item':
             const numberedListItem : ContentTree = {
                 type:'orderedListItem',
+                attrs:{
+                    id:branch.id,
+                    parent_id:branch.parent_id,
+                    parent_item_id:branch.parent_item_id
+                },
                 content:[
                 {
                     type:'paragraph',
@@ -218,7 +258,7 @@ export const makeContent = (dataTree:NestedContentItem[]):ContentTree[] => {
                 })
             } 
             
-            orderedBody.content!.push(numberedListItem);
+            orderedBody.content![0].content!.push(numberedListItem);
             
             break;
         default:

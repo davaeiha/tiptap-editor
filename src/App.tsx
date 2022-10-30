@@ -23,19 +23,20 @@ function App() {
 
   const { loading, error, data } = useQuery<KnowledgeContentQuery,QueryVarable>(KNOWLEDGE_CONTENT,{
     variables: {
-      id:'8cba6c7b-7912-44d5-a66e-4e6fda618a03'
+      id:'ac3e32e9-953a-40b8-bfce-7c7b7d5e6360'
     }
   });
-
   const [version,versionState] = useLazyQuery<VersionQuery,QueryVarable>(VERSION);
 
   const editor = useContext(EditorContext);
+  // console.log(editor?.storage)
 
   const [contentTree,setContentTree] = useState<ContentTree[]>([]);
 
   useEffect(()=>{
     if (data) {
-
+      
+       if(editor) editor.storage.ArticleItem.selectedVersion = data.knowledgeContent.versions![0].id;
       version({
         variables:{
           id:data.knowledgeContent.versions![0].id,
@@ -43,21 +44,21 @@ function App() {
         }
       })
       .then((res)=>{
+        // console.log(res.data)
         const tree = res.data && makeTree(res.data.version.items as ContentItem[],res.data.version.id as string);
         setContentTree(makeContent(tree as NestedContentItem[]));
       });
     }
-
   },[data]);
 
 
   useEffect(()=>{
-    if (editor) {
-      editor.commands.setContent({
+    // if (editor) {
+      editor?.commands.setContent({
         'type':'doc',
         content:contentTree
       } as ContentTree)
-    }
+    // }
   },[contentTree]);
 
   if (loading && versionState.loading) return 'Loading...';

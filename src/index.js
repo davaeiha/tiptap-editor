@@ -40,7 +40,7 @@ const jsonMiddleware = new ApolloLink((operation, forward) => {
       'content-type': 'application/json',
       authorization: localStorage.getItem('token') ? 
       'Bearer ' + localStorage.getItem('token') :
-      "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiIxMTgyOGMwNi1kY2Q2LTRmOGUtODcxYi1kZDBlZmE4ZDY1NjEiLCJ0ZWFtSWQiOiI2YTY2YjMzZC02NmFhLTRjMDgtYmRmNy00N2NiY2FkYTkxM2QiLCJpYXQiOjE2NjU5MDc1NDYsImV4cCI6MTY2NjUxMjM0Nn0.PI1LcbJ311DoSKOk-OAhyW5MEpQpgUrTGYPZ9HPRXw4"
+      "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiIxMTgyOGMwNi1kY2Q2LTRmOGUtODcxYi1kZDBlZmE4ZDY1NjEiLCJ0ZWFtSWQiOiI2YTY2YjMzZC02NmFhLTRjMDgtYmRmNy00N2NiY2FkYTkxM2QiLCJpYXQiOjE2NjY1OTM0NDQsImV4cCI6MTY2NzE5ODI0NH0.Nxi5mqrvsr98KZMHVdsg7jXRBVXsrFpyLNjujQUYRzM"
     }
   }));
 

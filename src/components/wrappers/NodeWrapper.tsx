@@ -18,10 +18,11 @@ export default (props : nodeWrapperProps) => {
   const [hover,setHover] = useState<boolean>(false);
   const pos : (() => number) = props.getPos as (()=>number);
   useEffect(()=>{
-    editor.commands.focus(pos()+2)
+    editor.commands.focus(pos()+2);
   },[]);
   const firstChild : string | undefined  = props.node?.firstChild?.type?.name;
-  const childrenNumber = props.node.content as any
+  const childrenNumber = props.node.content as any;
+ 
   
   return (
     <>

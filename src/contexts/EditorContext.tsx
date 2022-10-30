@@ -16,6 +16,14 @@ export const EditorProvider : React.FC<editorProps> = ({ children }) => {
  
 
   const editor : Editor | null  = useEditor({
+    editorProps:{
+      attributes:{
+        bulkItemsInput:[]
+      }
+    },
+    // onUpdate({editor}){
+    //   console.log(editor.getJSON())
+    // },
     extensions:extensions,
     injectCSS: true,
   } as EditorOptions);

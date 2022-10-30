@@ -1,4 +1,5 @@
 import { Editor } from '@tiptap/react';
+import { v4 as uuidv4 } from 'uuid';
 //@ts-ignore
 import {itemInterface} from '../types/item.ts';
 
@@ -17,6 +18,7 @@ const paragraphHandler = (editor:Editor | any ) => {
 }
 
 const bulletHandler = (editor:Editor | any) => {
+    // console.log(1)
     if (editor.isActive('heading')) {
         editor
         .chain()

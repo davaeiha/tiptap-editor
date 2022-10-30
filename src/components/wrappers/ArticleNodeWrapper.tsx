@@ -14,7 +14,7 @@ const ArticleNodeWrapper:React.FC<NodeViewRendererProps>= (props) => {
     const articleRef : React.RefObject<HTMLDivElement> = useRef(null);
     useBlur(focus,setFocus,articleRef);
     const {selectedVersion,dispatch} = useVersion(props);
-
+    
     
     return (
         <>
